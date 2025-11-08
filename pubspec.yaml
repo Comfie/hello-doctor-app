@@ -1,7 +1,7 @@
-name: getx_skeleton
+name: hello_doctor_app
 version: 1.0.0+1
 publish_to: none
-description: start your project in the fastest way
+description: Hello Doctor - Modern Healthcare App
 environment:
   sdk: '>=3.3.4 <4.0.0'
 
@@ -30,6 +30,16 @@ dependencies:
   rename_app: 1.4.0 # rename app
 
   flutter_svg:  # display svg vectors
+
+  # Additional dependencies for Hello Doctor
+  flutter_secure_storage: ^9.0.0 # secure storage for tokens
+  image_picker: ^1.0.7 # for prescription upload
+  file_picker: ^6.1.1 # for file selection
+  webview_flutter: ^4.5.0 # for payment integration
+  intl: ^0.19.0 # date formatting
+  cached_network_image: ^3.3.1 # cached images
+  shimmer: ^3.0.0 # loading shimmer effect
+  flutter_spinkit: ^5.2.0 # loading animations
 
   flutter:
     sdk: flutter

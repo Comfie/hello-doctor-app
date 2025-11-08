@@ -20,9 +20,12 @@ Future<void> main() async {
   await MyHive.init(
       registerAdapters: (hive) {
         hive.registerAdapter(UserModelAdapter());
-        //myHive.registerAdapter(OtherAdapter());
+        // hive.registerAdapter(AuthUserAdapter()); // Uncomment after running build_runner
       }
   );
+
+  // Initialize Auth Service
+  // await Get.putAsync(() async => AuthService()..init());
 
   // init shared preference
   await MySharedPref.init();
@@ -43,8 +46,7 @@ Future<void> main() async {
       rebuildFactor: (old, data) => true,
       builder: (context, widget) {
         return GetMaterialApp(
-              // todo add your app name
-              title: "GetXSkeleton",
+              title: "Hello Doctor",
               useInheritedMediaQuery: true,
               debugShowCheckedModeBanner: false,
               builder: (context,widget) {
