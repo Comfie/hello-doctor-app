@@ -10,7 +10,7 @@ class SettingsView extends GetView<SettingsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: LightThemeColors.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Settings',
@@ -63,7 +63,7 @@ class SettingsView extends GetView<SettingsController> {
   Widget _buildPreferencesSection() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
@@ -108,7 +108,7 @@ class SettingsView extends GetView<SettingsController> {
   Widget _buildAccountSection() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
@@ -153,7 +153,7 @@ class SettingsView extends GetView<SettingsController> {
   Widget _buildInformationSection() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
@@ -236,14 +236,14 @@ class SettingsView extends GetView<SettingsController> {
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,
-          color: LightThemeColors.bodyTextColor,
+          color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
         ),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
           fontSize: 13.sp,
-          color: LightThemeColors.bodySmallTextColor,
+          color: Theme.of(Get.context!).textTheme.bodySmall?.color,
         ),
       ),
       trailing: trailing,
@@ -264,7 +264,7 @@ class SettingsView extends GetView<SettingsController> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(Get.context!).cardColor,
           borderRadius: BorderRadius.circular(20.r),
           boxShadow: [
             BoxShadow(
@@ -300,6 +300,7 @@ class SettingsView extends GetView<SettingsController> {
   void _showThemeDialog() {
     Get.dialog(
       Dialog(
+        backgroundColor: Theme.of(Get.context!).cardColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
         ),
@@ -314,7 +315,7 @@ class SettingsView extends GetView<SettingsController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 20.h),
@@ -403,7 +404,7 @@ class SettingsView extends GetView<SettingsController> {
                       fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
                       color: isSelected
                           ? LightThemeColors.primaryColor
-                          : LightThemeColors.bodyTextColor,
+                          : Theme.of(Get.context!).textTheme.bodyLarge?.color,
                     ),
                   ),
                   SizedBox(height: 2.h),
@@ -432,6 +433,7 @@ class SettingsView extends GetView<SettingsController> {
   void _showLanguageDialog() {
     Get.dialog(
       Dialog(
+        backgroundColor: Theme.of(Get.context!).cardColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
         ),
@@ -446,7 +448,7 @@ class SettingsView extends GetView<SettingsController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 20.h),

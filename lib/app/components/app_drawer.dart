@@ -15,7 +15,7 @@ class AppDrawer extends StatelessWidget {
 
     return Drawer(
       child: Container(
-        color: LightThemeColors.scaffoldBackgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: Column(
           children: [
             // User Profile Header with Gradient

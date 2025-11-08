@@ -10,7 +10,7 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: LightThemeColors.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Obx(() {
         final user = controller.user.value;
 
@@ -107,7 +107,7 @@ class ProfileView extends GetView<ProfileController> {
                       style: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
-                        color: LightThemeColors.displayTextColor,
+                        color: Theme.of(context).textTheme.displayLarge?.color,
                       ),
                     ),
                     SizedBox(height: 12.h),
@@ -153,7 +153,7 @@ class ProfileView extends GetView<ProfileController> {
                       style: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
-                        color: LightThemeColors.displayTextColor,
+                        color: Theme.of(context).textTheme.displayLarge?.color,
                       ),
                     ),
                     SizedBox(height: 12.h),
@@ -201,11 +201,11 @@ class ProfileView extends GetView<ProfileController> {
   Widget _buildInfoCard({required List<Widget> children}) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
-            color: LightThemeColors.cardShadowColor,
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -244,7 +244,7 @@ class ProfileView extends GetView<ProfileController> {
                   label,
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: LightThemeColors.bodySmallTextColor,
+                    color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                   ),
                 ),
                 SizedBox(height: 4.h),
@@ -253,7 +253,7 @@ class ProfileView extends GetView<ProfileController> {
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
-                    color: LightThemeColors.bodyTextColor,
+                    color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                   ),
                 ),
               ],
@@ -283,11 +283,11 @@ class ProfileView extends GetView<ProfileController> {
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(Get.context!).cardColor,
           borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
-              color: LightThemeColors.cardShadowColor,
+              color: Colors.black.withOpacity(0.05),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -320,7 +320,7 @@ class ProfileView extends GetView<ProfileController> {
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
-                        color: LightThemeColors.bodyTextColor,
+                        color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                       ),
                     ),
                     SizedBox(height: 4.h),
@@ -328,7 +328,7 @@ class ProfileView extends GetView<ProfileController> {
                       subtitle,
                       style: TextStyle(
                         fontSize: 12.sp,
-                        color: LightThemeColors.bodySmallTextColor,
+                        color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                       ),
                     ),
                   ],

@@ -12,7 +12,7 @@ class UploadPrescriptionView extends GetView<UploadPrescriptionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: LightThemeColors.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Upload Prescription',
