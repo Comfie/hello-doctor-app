@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:hello_doctor_app/utils/awesome_notifications_helper.dart';
+import 'package:logger/logger.dart';
 
 import 'app/data/local/my_hive.dart';
 import 'app/data/local/my_shared_pref.dart';
@@ -10,7 +11,7 @@ import 'app/data/models/user_model.dart';
 import 'app/routes/app_pages.dart';
 import 'config/theme/my_theme.dart';
 import 'config/translations/localization_service.dart';
-import 'utils/fcm_helper.dart';
+// import 'utils/fcm_helper.dart'; // Uncomment if you configure Firebase
 
 Future<void> main() async {
   // wait for bindings
@@ -30,11 +31,19 @@ Future<void> main() async {
   // init shared preference
   await MySharedPref.init();
 
-  // inti fcm services
-  await FcmHelper.initFcm();
+  // NOTE: Firebase/FCM is OPTIONAL - only needed for push notifications
+  // To enable Firebase:
+  // 1. Configure Firebase for your project (run: flutterfire configure)
+  // 2. Uncomment the import and lines below
+  // await FcmHelper.initFcm();
 
-  // initialize local notifications service
-  await AwesomeNotificationsHelper.init();
+  // Initialize local notifications (optional - for in-app notifications)
+  try {
+    await AwesomeNotificationsHelper.init();
+  } catch (e) {
+    // If notifications fail, continue anyway - not critical for core functionality
+    Logger().w('Failed to initialize notifications: $e');
+  }
 
   runApp(
     ScreenUtilInit(
