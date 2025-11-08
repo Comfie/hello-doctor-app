@@ -34,7 +34,7 @@ class LoginView extends GetView<LoginController> {
                       style: TextStyle(
                         fontSize: 28.sp,
                         fontWeight: FontWeight.bold,
-                        color: LightThemeColors.displayTextColor,
+                        color: Theme.of(context).textTheme.displayLarge?.color,
                       ),
                     ),
                     SizedBox(height: 8.h),
@@ -42,7 +42,7 @@ class LoginView extends GetView<LoginController> {
                       'Sign in to continue',
                       style: TextStyle(
                         fontSize: 16.sp,
-                        color: LightThemeColors.bodySmallTextColor,
+                        color: Theme.of(context).textTheme.bodySmall?.color,
                       ),
                     ),
                   ],
@@ -57,7 +57,7 @@ class LoginView extends GetView<LoginController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -72,7 +72,7 @@ class LoginView extends GetView<LoginController> {
                         ? null
                         : controller.emailError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -119,7 +119,7 @@ class LoginView extends GetView<LoginController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -143,7 +143,7 @@ class LoginView extends GetView<LoginController> {
                         ? null
                         : controller.passwordError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -239,7 +239,7 @@ class LoginView extends GetView<LoginController> {
                       'OR',
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: LightThemeColors.bodySmallTextColor,
+                        color: Theme.of(context).textTheme.bodySmall?.color,
                       ),
                     ),
                   ),
@@ -258,7 +258,7 @@ class LoginView extends GetView<LoginController> {
                       "Don't have an account? ",
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: LightThemeColors.bodyTextColor,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
                       ),
                     ),
                     GestureDetector(

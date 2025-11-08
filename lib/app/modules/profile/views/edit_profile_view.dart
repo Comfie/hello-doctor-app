@@ -48,7 +48,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         'Update your personal information below',
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: LightThemeColors.bodyTextColor,
+                          color: Theme.of(context).textTheme.bodyLarge?.color,
                         ),
                       ),
                     ),
@@ -64,7 +64,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -78,7 +78,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         ? null
                         : controller.firstNameError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -125,7 +125,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -139,7 +139,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         ? null
                         : controller.lastNameError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -186,7 +186,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -201,7 +201,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         ? null
                         : controller.phoneNumberError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -248,7 +248,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -266,7 +266,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         ? null
                         : controller.addressError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(

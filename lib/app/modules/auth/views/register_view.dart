@@ -42,7 +42,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 24.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.displayTextColor,
+                  color: Theme.of(context).textTheme.displayLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -50,7 +50,7 @@ class RegisterView extends GetView<RegisterController> {
                 'Please fill in the details to create your account',
                 style: TextStyle(
                   fontSize: 14.sp,
-                  color: LightThemeColors.bodySmallTextColor,
+                  color: Theme.of(context).textTheme.bodySmall?.color,
                 ),
               ),
 
@@ -122,7 +122,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -135,7 +135,7 @@ class RegisterView extends GetView<RegisterController> {
                       vertical: 16.h,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: controller.dateOfBirthError.value.isEmpty
@@ -193,7 +193,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -201,7 +201,7 @@ class RegisterView extends GetView<RegisterController> {
                 () => Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: controller.genderError.value.isEmpty
@@ -245,7 +245,7 @@ class RegisterView extends GetView<RegisterController> {
                                 gender,
                                 style: TextStyle(
                                   fontSize: 14.sp,
-                                  color: LightThemeColors.bodyTextColor,
+                                  color: Theme.of(context).textTheme.bodyLarge?.color,
                                 ),
                               ),
                             ],
@@ -280,7 +280,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -294,7 +294,7 @@ class RegisterView extends GetView<RegisterController> {
                         ? null
                         : controller.addressError.value,
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -395,7 +395,7 @@ class RegisterView extends GetView<RegisterController> {
                       'Already have an account? ',
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: LightThemeColors.bodyTextColor,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
                       ),
                     ),
                     GestureDetector(
@@ -437,7 +437,7 @@ class RegisterView extends GetView<RegisterController> {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: LightThemeColors.bodyTextColor,
+            color: Theme.of(context).textTheme.bodyLarge?.color,
           ),
         ),
         SizedBox(height: 8.h),
@@ -450,7 +450,7 @@ class RegisterView extends GetView<RegisterController> {
               prefixIcon: Icon(icon, size: 20.sp),
               errorText: errorObs.value.isEmpty ? null : errorObs.value,
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Theme.of(context).cardColor,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.r),
                 borderSide: const BorderSide(
@@ -508,7 +508,7 @@ class RegisterView extends GetView<RegisterController> {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: LightThemeColors.bodyTextColor,
+            color: Theme.of(context).textTheme.bodyLarge?.color,
           ),
         ),
         SizedBox(height: 8.h),
@@ -530,7 +530,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
               errorText: errorObs.value.isEmpty ? null : errorObs.value,
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Theme.of(context).cardColor,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.r),
                 borderSide: const BorderSide(
