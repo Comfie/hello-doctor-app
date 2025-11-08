@@ -184,7 +184,7 @@ class AppDrawer extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w600,
-                        color: LightThemeColors.bodySmallTextColor,
+                        color: Theme.of(context).textTheme.bodySmall?.color,
                         letterSpacing: 0.5,
                       ),
                     ),
@@ -273,7 +273,7 @@ class AppDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: LightThemeColors.dividerColor,
+                    color: Theme.of(context).dividerColor,
                     width: 1,
                   ),
                 ),
@@ -291,7 +291,7 @@ class AppDrawer extends StatelessWidget {
                     'Hello Doctor v1.0.0',
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: LightThemeColors.bodySmallTextColor,
+                      color: Theme.of(context).textTheme.bodySmall?.color,
                     ),
                   ),
                 ],
@@ -338,12 +338,12 @@ class _DrawerMenuItem extends StatelessWidget {
         style: TextStyle(
           fontSize: 15.sp,
           fontWeight: FontWeight.w500,
-          color: LightThemeColors.bodyTextColor,
+          color: Theme.of(context).textTheme.bodyLarge?.color,
         ),
       ),
       trailing: Icon(
         Icons.chevron_right,
-        color: LightThemeColors.iconColorLight,
+        color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
         size: 20.sp,
       ),
       onTap: onTap,

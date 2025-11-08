@@ -219,7 +219,7 @@ class DashboardView extends GetView<DashboardController> {
         crossAxisCount: 2,
         crossAxisSpacing: 16.w,
         mainAxisSpacing: 16.h,
-        childAspectRatio: 1.1,
+        childAspectRatio: 1.0,
       ),
       itemCount: cards.length,
       itemBuilder: (context, index) {
@@ -234,7 +234,7 @@ class DashboardView extends GetView<DashboardController> {
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(Get.context!).cardColor,
           borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
@@ -265,7 +265,7 @@ class DashboardView extends GetView<DashboardController> {
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
-                color: LightThemeColors.bodyTextColor,
+                color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
               ),
               textAlign: TextAlign.center,
             ),
@@ -276,7 +276,7 @@ class DashboardView extends GetView<DashboardController> {
                 cardData.subtitle,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: LightThemeColors.bodySmallTextColor,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 2,
