@@ -1,433 +1,938 @@
+# Hello Doctor - Mobile Healthcare Application
 
+<img src="preview_images/app_icon.png" width="120" height="120">
 
-# Flutter GetX Template
+A comprehensive Flutter mobile application for healthcare management, enabling users to manage prescriptions, beneficiaries, payments, and medical records with a modern, user-friendly interface.
 
-Flutter Getx template: Starting up new project with all needed configuration has never been easier.
+## Table of Contents
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Running the App](#running-the-app)
+- [Building for Production](#building-for-production)
+- [API Integration](#api-integration)
+- [App Features Guide](#app-features-guide)
+- [Theme & Localization](#theme--localization)
+- [Testing](#testing)
+- [Troubleshooting](#troubleshooting)
 
-<img src="preview_images/github.png" width="100%">
+## Features
 
-## Used By
-- [Accessline Company](https://accessline.ps/)
-- [Smart Angle Group](https://www.smartanglegroup.com)
-- [Squarement](https://www.squarement.sa/)
-- GACA (+10k) ( [Google Play](https://play.google.com/store/apps/details?id=com.talapps.hrApp&hl=en) - [Apple Store](https://apps.apple.com/il/app/%D8%A8%D9%88%D8%A7%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D8%B8%D9%81/id1616229306) )
-- Hr App ( [Google Play](https://play.google.com/store/apps/details?id=com.talapps.hrApp) - [Apple Store]() )
-- Jumpers ( [Google Play](https://play.google.com/store/apps/details?id=com.jumpers.ksa) - [Apple Store](https://apps.apple.com/us/app/jumpers-app/id1662183546) )
-- Open Source : [Ecommerce Ui Kit](https://github.com/AbdQader/flutter_ecommerce_app)
-- Open Source : [Weather App](https://github.com/AbdQader/flutter_weather_app)
-- thunder_cli : [package](https://pub.dev/packages/thunder_cli)
+### 🔐 Authentication & Authorization
+- **User Registration**: Complete registration with personal details, ID verification, and secure password setup
+- **Secure Login**: JWT-based authentication with token refresh mechanism
+- **Password Management**: Change password functionality with strength validation
+- **Secure Token Storage**: Flutter Secure Storage for sensitive authentication tokens
+- **Auto Session Management**: Automatic token refresh and session expiry handling
 
-## Introduction
+### 👥 Beneficiary Management
+- **Add Beneficiaries**: Register family members or dependents
+- **Manage Beneficiaries**: View, edit, and delete beneficiary information
+- **Relationship Tracking**: Define relationships (spouse, child, parent, etc.)
+- **Medical Information**: Store beneficiary medical details and ID numbers
 
-We all face the same problem when we want to start a new project we have to take care of some repeatable things such as
-- Theme (light/dark) & store current theme in shared pref 🌒
-- Localization & store the current locale in shared pref 🅰️
-- Firebase Messaging 📨
-- Notifications setup 🔔
-- Safe api requests & error handling 🔏
-- Changing between widgets during api call (loading,success,failed..etc) 🔥
-- Snackbar,Toasts & in app notifications 🪖
-- Making app more responsive and stop font scaling 🚀
-- Change app Icon, Name and package id 🖋️
+### 💊 Prescription Management
+- **Upload Prescriptions**: Scan and upload prescription images (up to 25MB)
+- **View Prescription History**: Browse all uploaded prescriptions
+- **Prescription Details**: View detailed prescription information including:
+  - Prescription images
+  - Doctor information
+  - Medication details
+  - Prescription date and status
+- **Track Status**: Monitor prescription processing status
 
-This project will take care of all this repeatable things so you can start your project in few steps and you will have all the mentioned points set up and ready to use 😎
+### 💳 Payment Processing
+- **Secure Payments**: Process payments for prescriptions and medical services
+- **Payment History**: View complete payment transaction history
+- **Payment Status Tracking**: Real-time payment status updates
+- **Transaction Details**: Detailed payment information including:
+  - Transaction ID
+  - Amount
+  - Date and time
+  - Payment method
+  - Status (pending, completed, failed)
 
-## Latest Updates ([Updated Branch](https://github.com/EmadBeltaje/flutter_getx_template/tree/upgrade_to_latest_flutter_and_getx_version)) 🚀
-- [x] **Upgraded** project to work with the **latest Flutter versions** 🔥
-- [x] **Updated** to **GetX 5** 🚀
-- [x] **Fixed** deprecated code and ensured compatibility 🛠️
-- [x] **Refactored** code and resolved all Dart lints 🛠️
+### 👤 Profile Management
+- **View Profile**: Display user information and medical records
+- **Edit Profile**: Update personal information (name, phone, address)
+- **Change Password**: Secure password change with validation
+- **Profile Picture**: Avatar with user initials
 
+### ⚙️ Settings & Preferences
+- **Theme Selection**: Choose between Light, Dark, or System theme
+- **Language Support**: Multi-language support (English/Arabic)
+- **Notification Settings**: Manage push notification preferences
+- **App Preferences**: Customize app behavior
 
-## What is new 🌟
-- [x] **GetX 5** support 
-- [x] Separate Local Notification helper from fcm helper 🛠️
-- [x] Integration Test for BaseClient 🧪
-- [x] Integration Test for Awesome Notifications Helper 🧪
-- [x] Integration Test for Widget Animator 🧪
-- [x] Unit Test also for BaseClient 🧪
-- [x] Unit Test for MySharedPreference 🧪
-- [x] Unit Test for MyHive 🧪
-- [x] Unit Test for Localization Service 🧪
-- [x] Replace get_storage with SharedPref (unsolved testing problems with get_storage) 📦️
+### 📱 Modern UI/UX
+- **Material Design 3**: Clean, modern interface following Material Design guidelines
+- **Dark Mode**: Full dark mode support with smooth transitions
+- **Responsive Design**: Adapts to different screen sizes using flutter_screenutil
+- **Smooth Animations**: Polished animations and transitions
+- **Custom Components**: Reusable UI components and widgets
 
-[//]: # (## Acknowledgment)
+### 🔔 Notifications
+- **Push Notifications**: Firebase Cloud Messaging integration
+- **Local Notifications**: In-app notifications using Awesome Notifications
+- **Notification History**: View all notifications
 
-[//]: # (Project was created using [get_cli]&#40;https://pub.dev/packages/get_cli&#41; which is a great tool helping you to &#40;start project,create screens/controllers, handling DI&#41;..etc and we will list other packages that helped to create this skeleton)
+### 📄 Information Pages
+- **About**: App information and version details
+- **Terms of Service**: Legal terms and conditions
+- **Privacy Policy**: Data privacy and security information
 
-[//]: # (- [GetX]&#40;https://pub.dev/packages/get&#41; for state management,navigation,managing dependencies..etc)
+## Screenshots
 
-[//]: # (- [flutter_screenutil]&#40;https://pub.dev/packages/flutter_screenutil&#41; to make app more responsive)
+*Coming soon - Add your app screenshots here*
 
-[//]: # (- [hive]&#40;https://pub.dev/packages/hive&#41; as local database)
+## Tech Stack
 
-[//]: # (- [shared_preferences]&#40;https://pub.dev/packages/shared_preferences&#41; store data persistently as key/value)
+### Core Framework
+- **Flutter SDK**: >=3.3.4 <4.0.0
+- **Dart**: Modern, type-safe programming language
 
-[//]: # (- [awesome_notifications]&#40;https://pub.dev/packages/awesome_notifications&#41; for local notification)
+### State Management & Architecture
+- **GetX** (^4.6.6): State management, dependency injection, and routing
+- **GetX Pattern**: Clean architecture with separation of concerns
 
-## Clone and start project
-- To make your app responsive and look exactly as your (xd,figma..etc) design you need to set artbord size for flutter_ScreenUtil in main.dart
-    ```dart
-    ScreenUtilInit(
-      designSize: const Size(375, 812), // change this to your xd artboard size
-    ```
+### UI & Styling
+- **flutter_screenutil** (^5.9.3): Responsive UI design
+- **Material Design 3**: Latest Material Design guidelines
+- **Custom Themes**: Dynamic light/dark theme support
+- **flutter_svg**: SVG vector graphics support
 
+### Networking & API
+- **Dio** (^5.4.3+1): HTTP client for API requests
+- **pretty_dio_logger** (^1.3.1): API request/response logging
+- **http_mock_adapter** (^0.6.1): API mocking for testing
 
-- FCM & Awesome Notifications are initialized in main.dart so when ever you connect your app to firebase your app will be ready to receive notifications you don't need to do anything, if you want to send token to api you can find this function in FcmHelper class 😎
-    ```dart
-    static _sendFcmTokenToServer(){
-        var token = MySharedPref.getFcmToken();
-        // TODO SEND FCM TOKEN TO SERVER
-    }
-    ```
+### Data Persistence
+- **Hive** (^2.2.3): Fast, lightweight local database
+- **hive_flutter** (^1.1.0): Hive integration for Flutter
+- **shared_preferences** (^2.2.3): Simple key-value storage
+- **flutter_secure_storage**: Secure token storage
 
-- Change app package name
-    ```
-    flutter pub run change_app_package_name:main com.new.package.name
-    ```
+### Firebase Integration
+- **firebase_core** (^3.0.0): Firebase initialization
+- **firebase_messaging** (^15.0.0): Push notifications
 
-- Change app name
-    ```
-    flutter pub run rename_app:main all="My App Name"
-    ```
+### Notifications
+- **awesome_notifications** (^0.9.3+1): Rich local and push notifications
 
-- Change app launch icon (replace assets/images/app_icon.png with your app icon) then run this command
-    ```
-    flutter pub run flutter_launcher_icons:main
-    ```
+### Utilities
+- **logger** (^2.3.0): Enhanced logging capabilities
+- **cupertino_icons** (^1.0.8): iOS-style icons
 
-- FCM: firebase has recently added (add flutter app) to your firebase which will make adding our flutter(android/ios) app to firebase take only 2 steps 🔥 but first you need to download [Firebase CLI](https://firebase.google.com/docs/cli?authuser=0&hl=en#install_the_firebase_cli) and in the terminal execute:
-    ```
-    dart pub global activate flutterfire_cli
-    ```
-  then follow the firebase guid you will get command similar to this one
-    ```
-    flutterfire configure --project=flutter-firebase-YOUR_PROJECT_ID
-    ```
-  and that's it! your project is now connected to firebase and fcm is up and ready to get notifications
-  ##### Important Note
-  IOS require few more steps from your side to recive fcm notifications follow the [Dcos](https://firebase.flutter.dev/docs/messaging/apple-integration/) steps and after that everything should be working fine from flutter side
+### Development Tools
+- **flutter_launcher_icons**: Custom app icon generation
+- **change_app_package_name**: Package name modification
+- **rename_app** (1.4.0): App name modification
+- **flutter_lints**: Code quality and linting
+- **mockito**: Mocking for unit tests
+- **build_runner**: Code generation
+- **hive_generator**: Hive model generation
 
-## Quick Start
-- Responsive app: to make your app responsive you need to get advantage of using flutter_ScreenUtil so instead of using normal double values for height,width,radius..etc you need to use it like this
+## Project Structure
+
+```
+lib/
+├── app/
+│   ├── components/              # Reusable UI components
+│   │   ├── app_drawer.dart     # Navigation drawer
+│   │   └── custom_snackbar.dart # Custom snackbar widget
+│   │
+│   ├── data/                   # Data layer
+│   │   ├── local/              # Local storage
+│   │   │   ├── my_hive.dart    # Hive database helper
+│   │   │   └── my_shared_pref.dart # SharedPreferences helper
+│   │   │
+│   │   └── models/             # Data models
+│   │       ├── auth_model.dart
+│   │       ├── beneficiary_model.dart
+│   │       ├── payment_model.dart
+│   │       ├── prescription_model.dart
+│   │       └── user_model.dart
+│   │
+│   ├── modules/                # Feature modules
+│   │   ├── splash/            # Splash screen
+│   │   ├── auth/              # Authentication (login/register)
+│   │   ├── dashboard/         # Home dashboard
+│   │   ├── beneficiary/       # Beneficiary management
+│   │   ├── prescription/      # Prescription management
+│   │   ├── payment/           # Payment processing
+│   │   ├── profile/           # User profile
+│   │   ├── settings/          # App settings
+│   │   └── about/             # About, Terms, Privacy
+│   │
+│   ├── routes/                 # Navigation routes
+│   │   ├── app_pages.dart     # Route definitions
+│   │   └── app_routes.dart    # Route names
+│   │
+│   └── services/              # Business logic services
+│       ├── auth_service.dart
+│       ├── beneficiary_service.dart
+│       ├── payment_service.dart
+│       ├── prescription_service.dart
+│       ├── base_client.dart   # HTTP client wrapper
+│       ├── api_call_status.dart
+│       └── api_exceptions.dart
+│
+├── config/                     # App configuration
+│   ├── theme/                 # Theme configuration
+│   │   ├── light_theme_colors.dart
+│   │   ├── dark_theme_colors.dart
+│   │   ├── my_theme.dart
+│   │   ├── my_styles.dart
+│   │   └── my_fonts.dart
+│   │
+│   └── translations/          # Localization
+│       ├── localization_service.dart
+│       ├── strings_enum.dart
+│       ├── en_US/
+│       └── ar_AR/
+│
+├── utils/                      # Utilities and helpers
+│   ├── constants.dart         # App constants
+│   ├── awesome_notifications_helper.dart
+│   └── fcm_helper.dart
+│
+└── main.dart                  # App entry point
+```
+
+### Module Structure (GetX Pattern)
+
+Each module follows this structure:
+```
+module_name/
+├── bindings/           # Dependency injection
+├── controllers/        # Business logic (GetX Controllers)
+└── views/             # UI screens
+```
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Flutter SDK**: 3.3.4 or higher
+  ```bash
+  flutter --version
+  ```
+
+- **Dart SDK**: Included with Flutter
+
+- **Android Studio** or **Xcode** (for iOS development)
+
+- **Git**: For version control
+
+- **Backend API**: The app requires a backend API server (see [API Integration](#api-integration))
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd hello-doctor-app
+```
+
+### 2. Install Dependencies
+
+```bash
+flutter pub get
+```
+
+### 3. Generate Required Files
+
+```bash
+# Generate Hive adapters
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+### 4. Verify Installation
+
+```bash
+flutter doctor
+```
+
+Fix any issues reported by `flutter doctor`.
+
+## Configuration
+
+### 1. Configure App Identity
+
+#### Change App Name
+```bash
+flutter pub run rename_app:main all="Your App Name"
+```
+
+#### Change Package Name
+```bash
+flutter pub run change_app_package_name:main com.yourcompany.yourapp
+```
+
+#### Change App Icon
+1. Replace `assets/images/app_icon.png` with your icon (1024x1024 recommended)
+2. Run:
+```bash
+flutter pub run flutter_launcher_icons:main
+```
+
+### 2. Configure API Backend
+
+Edit `lib/utils/constants.dart`:
+
 ```dart
-200.w // adapted to screen width
-100.h // /Adapted to screen height
-25.sp // adapted font size
-10.r // adapted radius
-// Example
-Container(
-    height: 100.h,
-    width: 200.w,
-    child: Text("Hello",style: TextStyle(fontSize: 20.sp,))
+class Constants {
+  // For Android Emulator
+  static const String baseUrl = 'http://10.0.2.2:5000/api/v1';
+
+  // For iOS Simulator
+  // static const String baseUrl = 'http://localhost:5000/api/v1';
+
+  // For Production
+  // static const String baseUrl = 'https://your-api-domain.com/api/v1';
+}
+```
+
+**Important**:
+- Android Emulator uses `10.0.2.2` to access host machine's localhost
+- iOS Simulator can use `localhost` directly
+- Physical devices require your computer's IP address or production URL
+
+### 3. Configure Firebase (Optional for Push Notifications)
+
+1. Install Firebase CLI:
+```bash
+curl -sL https://firebase.tools | bash
+```
+
+2. Login to Firebase:
+```bash
+firebase login
+```
+
+3. Install FlutterFire CLI:
+```bash
+dart pub global activate flutterfire_cli
+```
+
+4. Configure Firebase:
+```bash
+flutterfire configure --project=your-firebase-project-id
+```
+
+This will automatically:
+- Create Firebase configuration files
+- Set up iOS and Android apps
+- Configure Firebase Messaging
+
+**Note**: Firebase is optional. The app can work without FCM by commenting out Firebase initialization in `main.dart`.
+
+### 4. Configure Screen Size
+
+Edit `lib/main.dart` to match your design artboard size:
+
+```dart
+ScreenUtilInit(
+  designSize: const Size(375, 812), // Your design dimensions (width, height)
+  minTextAdapt: true,
+  splitScreenMode: true,
+  child: MyApp(),
 )
 ```
 
-- Theme
-  - Change theme
+Common sizes:
+- iPhone X/11/12: 375 x 812
+- iPhone 8: 375 x 667
+- Android (common): 360 x 640
 
-      ```dart
-      MyTheme.changeTheme();
-      ```
+## Running the App
 
-  - Check current theme
+### Development Mode
 
-      ```dart
-      bool isThemeLight = MyTheme.getThemeIsLight();
-      ```
-
-- Localization
-  - Change app locale
-
-      ```dart
-      LocalizationService.updateLanguage('en');
-      ```
-
-  - Get current locale
-
-      ```dart
-      LocalizationService.getCurrentLocal();
-      ```
-
-  - Use translation
-
-      ```dart
-      Text(Strings.hello.tr)
-      ```
-
-- Safe api call
-  - logic code (in controller)
-      ```dart
-        // hold data coming from api
-        List<dynamic> data;
-    
-        // api call status
-        ApiCallStatus apiCallStatus = ApiCallStatus.holding;
-
-        // getting data from api
-        getData() async {
-          // *) perform api call
-          await BaseClient.safeApiCall(
-            Constants.todosApiUrl, // url
-            RequestType.get, // request type (get,post,delete,put),
-            onLoading: () {
-              // *) indicate loading state
-              apiCallStatus = ApiCallStatus.loading;
-              update();
-            },
-            onSuccess: (response){ // api done successfully
-              data = List.from(response.data);
-              // -) indicate success state
-              apiCallStatus = ApiCallStatus.success;
-              update(); // update ui
-            },
-            // if you don't pass this method base client
-            // will automatically handle error and show error message to user
-            onError: (error){
-              // show error message to user
-              BaseClient.handleApiError(error);
-              // -) indicate error status
-              apiCallStatus = ApiCallStatus.error;
-              update(); // update ui
-            },
-          );
-        }
-      ```
-  - UI: MyWidgetsAnimator will animate between widgets depending on current api call status
-
-      ```dart
-      GetBuilder<HomeController>(
-      builder: (controller){
-        return MyWidgetsAnimator(
-            apiCallStatus: controller.apiCallStatus,
-            loadingWidget: () => const Center(child: CircularProgressIndicator(),),
-            errorWidget: ()=> const Center(child: Text('Something went wrong!'),),
-            successWidget: () =>
-               ListView.separated(
-                itemCount: controller.data!.length,
-                separatorBuilder: (_,__) => SizedBox(height: 10.h,),
-                itemBuilder: (ctx,index) => ListTile(
-                    title: Text(controller.data![index]['userId'].toString()),
-                    subtitle: Text(controller.data![index]['title']),
-                  ),
-              ),
-
-        );
-      },
-    )
-      ```
-
-- Snackbars (in app notify):
-
-    ```dart
-    CustomSnackBar.showCustomSnackBar(title: 'Done successfully!', message: 'item added to wishlist');
-    CustomSnackBar.showCustomErrorSnackBar(title: 'Failed!', message: 'failed to load data');
-    CustomSnackBar.showCustomToast(message: 'added to card');
-    CustomSnackBar.showCustomErrorToast(message: 'added to card');
-    ```
-
-  <img src="preview_images/success_snackbar.jpg" width="170px">&nbsp;&nbsp;<img src="preview_images/fail_snackbar.jpg" width="170px">&nbsp;&nbsp;<img src="preview_images/success_toast.jpg" width="170px">&nbsp;&nbsp;<img src="preview_images/fail_toast.jpg" width="170px">
-
-## Discovering Project
-After setting up all the needed thing now lets talk about folder structure which is mainly based on Getx Pattern and there are some personal opinions, if you open your lib folder you will find those folders
-
-```
-.
-└── lib
-    ├── app
-    │   ├── components
-    │   ├── data
-    │   │   ├── local
-    │   │   └── models
-    │   ├── modules
-    │   │   └── home
-    │   ├── routes
-    │   └── services
-    ├── config
-    │   ├── theme
-    │   └── translation
-    └── utils
+#### Android
+```bash
+flutter run
 ```
 
-- app: will contain all our core app logic
-  - components: will contain all the shared UI widgets
-  - data: will contain our models and local data sources (local db & shared pref)
-  - modules: app screens
-  - routes: generated by get_cli and it will contain our navigation routes
-  - services: contain all logic for making safe & clean api calls
-- config: will contain app config such as themes, localization services
-- utils: for our helper classes
-## Features
-- Theme: if you opened theme package you will see those files
+#### iOS
+```bash
+# Make sure you're on macOS and have Xcode installed
+flutter run -d ios
+```
 
-    ```
-    └── theme
-        ├── dark_theme_colors.dart
-        ├── light_theme_colors.dart
-        ├── my_fonts.dart
-        ├── my_styles.dart
-        └── my_theme.dart
-   
-    ```
+#### Specific Device
+```bash
+# List available devices
+flutter devices
 
-  you only need to change app colors (light/dark_theme_colors) and if you want to change app fonts sizes and family just modify my_fonts.dart and that is it you don't need to worry about styles and theme you only need to edit my_syles.dart if you want to change some element theme data (padding,border..etc) and if you want to change theme just use this code
+# Run on specific device
+flutter run -d <device-id>
+```
 
-    ```dart
-    // change theme and save current theme state to shared pref
-    MyTheme.changeTheme();
-    ```
+### Debug Mode with Hot Reload
 
-  and if you want to check if the theme is dark/light just use
-    ```dart
-    bool themeIsLight = MyTheme.getThemeIsLight();
-    // OR
-    bool themeIsLight = MySharedPref.getThemeIsLight();
-    ```
-- Localization/translation we will use getx localization system which in the normal case code would look something like this
+```bash
+flutter run --debug
+```
 
-    ```dart
-    class LocalizationService extends Translations {
-        @override
-        Map<String, Map<String, String>> get keys => {
-            'en_US': { 'hello' : 'Hello' },
-            'ar_AR': { 'hello' : 'مرحباً' },
-        };
-    }
+Press `r` for hot reload, `R` for hot restart.
 
-    Text('hello'.tr); // translated text 
-  ```
+### Profile Mode (Performance Testing)
 
-  but because we have so many words to translate we will separate keys file (strings_enum.dart) and languages map into different classes so code will become like this
+```bash
+flutter run --profile
+```
 
-  ```dart
-  class LocalizationService extends Translations {
-        @override
-        Map<String, Map<String, String>> get keys => {
-            'en_US': enUs,
-            'ar_AR': arAR,
-        };
-    }
-  // keys
-  class Strings {
-      static const String hello = 'hello';
-  }
-  // english words
-  const Map<String, String> enUs = {
-      Strings.hello : 'Hello',
-  }
-  // arabic translate
-  final Map<String, String> arAR = {
-      Strings.hello : 'مرحبا',
-  }
-  //result
-  Text(Strings.hello.tr)
-  ```
+## Building for Production
 
-  and that explain why we have this file structure inside our translation package
+### Android APK
 
-     ```
-        └── translations
-            ├── ar_Ar
-            │   └── ar_ar_translation.dart
-            ├── en_US
-            │   └── en_us_translation.dart
-            ├── localization_service.dart
-            └── strings_enum.dart
-     ```
+```bash
+# Build APK
+flutter build apk --release
 
-  to change language you will use
+# Build split APKs per ABI (smaller size)
+flutter build apk --split-per-abi --release
 
-    ```dart
-    LocalizationService.updateLanguage('en');
-    ```
+# Output: build/app/outputs/flutter-apk/app-release.apk
+```
 
-  and to get the current locale/language you can use
+### Android App Bundle (for Google Play)
 
-    ```dart
-    LocalizationService.getCurrentLocal();
-    // OR
-    MySharedPref.getCurrentLocal();
-    ```
+```bash
+flutter build appbundle --release
 
-- Safe api call: under if you opened lib/app/services package you will find 3 files
-  - api_call_status.dart: which contain all possible stages of our api call (loading,success,error..etc)
-  - api_exception.dart: custom exception class to make error handling more informative
-  - base_client.dart: contain our safe api call functions
-    to perform api request the right way you would do this
+# Output: build/app/outputs/bundle/release/app-release.aab
+```
 
-```dart
-class HomeController extends GetxController {
-  // hold data
-  List<dynamic>? data;
-  // api call status
-  ApiCallStatus apiCallStatus = ApiCallStatus.holding;
+### iOS
 
-  // getting data from api simulating
-  getData() async {
-    // *) indicate loading state
-    apiCallStatus = ApiCallStatus.loading;
-    update();
-    // *) perform api call
-    await BaseClient.safeApiCall(
-      Constants.todosApiUrl, // url
-      RequestType.get,
-      onSuccess: (response){ // api done successfully
-        data = List.from(response.data);
-        // -) indicate success state
-        apiCallStatus = ApiCallStatus.success;
-        update(); // update ui
-      },
-      // if you don't pass this method base client
-      // will automatically handle error and show message
-      onError: (error){
-        // show error message to user
-        BaseClient.handleApiError(error);
-        // -) indicate error status
-        apiCallStatus = ApiCallStatus.error;
-        update(); // update ui
-      }, // error while performing request
-    );
-  }
+```bash
+# Make sure you have a valid provisioning profile
+flutter build ios --release
 
-  @override
-  void onInit() {
-    getData();
-    super.onInit();
+# Then open Xcode to archive and upload
+open ios/Runner.xcworkspace
+```
+
+## API Integration
+
+### Backend Requirements
+
+The app expects a REST API with the following endpoints:
+
+#### Authentication
+- `POST /api/v1/authentication/login` - User login
+- `POST /api/v1/authentication/create` - User registration
+- `POST /api/v1/authentication/refresh-token` - Refresh JWT token
+- `GET /api/v1/authentication/get-user-by-id/:id` - Get user details
+- `PUT /api/v1/authentication/update-user` - Update user profile
+
+#### Beneficiaries
+- `GET /api/v1/beneficiary/get-all-beneficiaries` - List all beneficiaries
+- `GET /api/v1/beneficiary/get-beneficiary/:id` - Get beneficiary details
+- `POST /api/v1/beneficiary/create` - Create beneficiary
+- `PUT /api/v1/beneficiary/update-beneficiary` - Update beneficiary
+- `DELETE /api/v1/beneficiary/delete-beneficiary/:id` - Delete beneficiary
+
+#### Prescriptions
+- `POST /api/v1/prescription/upload-file` - Upload prescription (multipart/form-data)
+- `GET /api/v1/prescription/:id` - Get prescription details
+- `GET /api/v1/prescription/get-all-prescriptions` - List prescriptions
+
+#### Payments
+- `POST /api/v1/payment/initiate` - Initiate payment
+- `GET /api/v1/payment/:id/status` - Check payment status
+- `GET /api/v1/payment/history` - Get payment history
+
+### Authentication Flow
+
+The app uses JWT-based authentication:
+
+1. User logs in with email/password
+2. Backend returns JWT token, refresh token, and expiry time
+3. App stores tokens securely using Flutter Secure Storage
+4. All API requests include `Authorization: Bearer <token>` header
+5. Token auto-refreshes before expiry
+
+### API Response Format
+
+Expected response format:
+```json
+{
+  "isSuccess": true,
+  "message": "Success message",
+  "value": {
+    // Response data
   }
 }
 ```
 
-base client will catch all the possible errors and if you didn't pass onError function it will automatically catch the error in UI side code will be
+## App Features Guide
+
+### First Time Setup
+
+1. **Launch App**: Opens to splash screen
+2. **Login/Register**:
+   - New users: Tap "Register" and fill in required details
+   - Existing users: Enter email and password
+3. **Dashboard**: Main screen with quick action cards
+
+### Using the Dashboard
+
+The dashboard provides quick access to:
+- **Upload Prescription**: Scan and upload prescriptions
+- **Manage Beneficiaries**: Add/edit family members
+- **View Prescriptions**: Access prescription history
+- **Payment History**: View transaction records
+- **Profile**: Manage your account
+
+### Managing Beneficiaries
+
+1. Navigate to **Beneficiaries** from drawer or dashboard
+2. Tap **+** to add a new beneficiary
+3. Fill in:
+   - First Name, Last Name
+   - ID Number
+   - Date of Birth
+   - Gender
+   - Relationship
+4. Save beneficiary
+
+### Uploading Prescriptions
+
+1. Tap **Upload Prescription** on dashboard
+2. Select beneficiary (or self)
+3. Choose image source (camera/gallery)
+4. Add optional notes
+5. Upload (max 25MB)
+6. Track status in Prescription List
+
+### Making Payments
+
+1. View prescription details
+2. Tap **Make Payment**
+3. Review payment details
+4. Confirm payment
+5. Track in Payment History
+
+### Profile Management
+
+- **View Profile**: See all your information
+- **Edit Profile**: Update name, phone, address
+- **Change Password**: Secure password update with validation
+
+### Settings & Preferences
+
+**Theme Options**:
+- **Light**: Light color scheme
+- **Dark**: Dark color scheme
+- **System**: Follow device settings
+
+**Language Options**:
+- English
+- Arabic (RTL support)
+
+## Theme & Localization
+
+### Changing Theme
+
+Programmatically:
+```dart
+// Toggle theme
+MyTheme.changeTheme();
+
+// Check current theme
+bool isLight = MyTheme.getThemeIsLight();
+```
+
+User Interface:
+- Navigate to **Settings**
+- Tap on **Theme** card
+- Select: System / Light / Dark
+
+### Dark Mode Features
+
+The app includes comprehensive dark mode support:
+- All screens adapt to selected theme
+- Smooth theme transitions
+- System theme integration
+- Persistent theme preference
+
+### Adding Translations
+
+1. Add keys to `lib/config/translations/strings_enum.dart`:
+```dart
+class Strings {
+  static const String hello = 'hello';
+  static const String welcome = 'welcome';
+}
+```
+
+2. Add translations in `lib/config/translations/en_US/en_us_translation.dart`:
+```dart
+const Map<String, String> enUs = {
+  Strings.hello: 'Hello',
+  Strings.welcome: 'Welcome',
+};
+```
+
+3. Add Arabic in `lib/config/translations/ar_AR/ar_ar_translation.dart`:
+```dart
+final Map<String, String> arAR = {
+  Strings.hello: 'مرحباً',
+  Strings.welcome: 'أهلاً',
+};
+```
+
+4. Use in code:
+```dart
+Text(Strings.hello.tr)
+```
+
+### Changing Language
 
 ```dart
-GetBuilder<HomeController>(
-    builder: (_){
-        return MyWidgetsAnimator(
-            apiCallStatus: controller.apiCallStatus,
-            loadingWidget: () => const Center(child: CircularProgressIndicator(),),
-            errorWidget: ()=> const Center(child: Text('Something went wrong!'),),
-            successWidget: () =>
-            ListView.separated(
-            itemCount: controller.data!.length,
-            separatorBuilder: (_,__) => SizedBox(height: 10.h,),
-            itemBuilder: (ctx,index) => ListTile(
-            title: Text(controller.data![index]['userId'].toString()),
-            subtitle: Text(controller.data![index]['title']),
-            ),
-        ),
-        
-        );
-    },
-)
+LocalizationService.updateLanguage('en');
+// or
+LocalizationService.updateLanguage('ar');
 ```
-**NOTE:** MyWidgetsAnimator will take care of ui changing with animation you will pass the ApiCallStatus and success,failed,loading..etc widgets and it will take care of transition
 
-## Thanks To Contributors 🧡
+## Testing
 
-[![Contributors](https://contrib.rocks/image?repo=EmadBeltaje/flutter_getx_template)](https://github.com/EmadBeltaje/flutter_getx_template/graphs/contributors)
+### Run All Tests
 
-Thanks to all the amazing contributors who have helped improve this project! 😇
+```bash
+flutter test
+```
 
-## Support
+### Unit Tests
 
-For support, email emadbeltaje@gmail.com or Facebook [Emad Beltaje](https://www.facebook.com/EmadBeltaje/).
+```bash
+flutter test test/unit/
+```
+
+### Integration Tests
+
+```bash
+flutter test integration_test/
+```
+
+### Test Coverage
+
+```bash
+flutter test --coverage
+genhtml coverage/lcov.info -o coverage/html
+open coverage/html/index.html
+```
+
+## Troubleshooting
+
+### Common Issues
+
+#### 1. White Screen on Startup
+
+**Problem**: App shows white screen after splash
+
+**Solution**:
+- Check backend API is running
+- Verify API URL in `constants.dart`
+- Check network permissions in `AndroidManifest.xml`
+
+#### 2. Android Network Permission
+
+**Problem**: API calls fail on Android
+
+**Solution**: Add to `android/app/src/main/AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+#### 3. iOS API Calls Fail
+
+**Problem**: API requests blocked on iOS
+
+**Solution**: Add to `ios/Runner/Info.plist`:
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
+**Note**: For production, use HTTPS instead of allowing arbitrary loads.
+
+#### 4. Build Runner Conflicts
+
+**Problem**: Build runner generation fails
+
+**Solution**:
+```bash
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+#### 5. Firebase Configuration Issues
+
+**Problem**: Firebase errors on startup
+
+**Solution**:
+- Ensure `firebase_options.dart` exists
+- Run `flutterfire configure` again
+- Or comment out Firebase initialization in `main.dart` if not needed
+
+#### 6. Gradle Build Fails
+
+**Problem**: Android build fails with Gradle errors
+
+**Solution**:
+```bash
+cd android
+./gradlew clean
+cd ..
+flutter clean
+flutter pub get
+```
+
+#### 7. CocoaPods Issues (iOS)
+
+**Problem**: iOS build fails with pod errors
+
+**Solution**:
+```bash
+cd ios
+pod deintegrate
+pod install
+cd ..
+flutter clean
+flutter pub get
+```
+
+## Responsive Design
+
+The app uses `flutter_screenutil` for responsive layouts:
+
+```dart
+// Width
+Container(width: 200.w)  // Adapts to screen width
+
+// Height
+Container(height: 100.h)  // Adapts to screen height
+
+// Font Size
+Text('Hello', style: TextStyle(fontSize: 16.sp))
+
+// Radius
+BorderRadius.circular(12.r)
+```
+
+## Safe API Calls
+
+The app uses a wrapper for safe API calls with automatic error handling:
+
+```dart
+await BaseClient.safeApiCall(
+  Constants.loginUrl,
+  RequestType.post,
+  data: {'email': email, 'password': password},
+  onLoading: () {
+    apiCallStatus = ApiCallStatus.loading;
+    update();
+  },
+  onSuccess: (response) {
+    // Handle success
+    apiCallStatus = ApiCallStatus.success;
+    update();
+  },
+  onError: (error) {
+    // Handle error
+    BaseClient.handleApiError(error);
+    apiCallStatus = ApiCallStatus.error;
+    update();
+  },
+);
+```
+
+## State Management with GetX
+
+### Controllers
+
+```dart
+class MyController extends GetxController {
+  // Observable variables
+  final count = 0.obs;
+
+  // Methods
+  void increment() => count.value++;
+
+  @override
+  void onInit() {
+    super.onInit();
+    // Initialize
+  }
+}
+```
+
+### Views
+
+```dart
+class MyView extends GetView<MyController> {
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() => Text('${controller.count}'));
+  }
+}
+```
+
+### Navigation
+
+```dart
+// Navigate to named route
+Get.toNamed(Routes.DASHBOARD);
+
+// Navigate and clear stack
+Get.offAllNamed(Routes.LOGIN);
+
+// Go back
+Get.back();
+
+// Pass arguments
+Get.toNamed(Routes.DETAILS, arguments: {'id': 123});
+```
+
+## Custom Snackbars
+
+```dart
+// Success message
+CustomSnackBar.showCustomSnackBar(
+  title: 'Success',
+  message: 'Operation completed successfully',
+);
+
+// Error message
+CustomSnackBar.showCustomErrorSnackBar(
+  title: 'Error',
+  message: 'Something went wrong',
+);
+
+// Toast
+CustomSnackBar.showCustomToast(
+  message: 'Item added to cart',
+);
+```
+
+## Data Persistence
+
+### Secure Storage (Tokens)
+
+```dart
+// Store token
+await MySecureStorage.setToken(token);
+
+// Get token
+String? token = await MySecureStorage.getToken();
+
+// Delete token
+await MySecureStorage.deleteToken();
+```
+
+### SharedPreferences (Settings)
+
+```dart
+// Store theme preference
+MySharedPref.setThemeIsLight(true);
+
+// Get theme preference
+bool isLight = MySharedPref.getThemeIsLight();
+
+// Store language
+MySharedPref.setCurrentLanguage('en');
+```
+
+### Hive (Local Database)
+
+```dart
+// Open box
+await MyHive.init();
+
+// Store data
+await MyHive.put('key', value);
+
+// Get data
+var data = MyHive.get('key');
+
+// Delete data
+await MyHive.delete('key');
+```
+
+## Performance Optimization
+
+### Best Practices Implemented
+
+1. **Image Optimization**: Cached network images
+2. **List Performance**: ListView.builder for long lists
+3. **State Management**: GetX for efficient rebuilds
+4. **Code Splitting**: Lazy loading of routes
+5. **Responsive Design**: Proper use of screenutil
+6. **API Caching**: Token refresh mechanism
+7. **Memory Management**: Proper controller disposal
+
+## Security Features
+
+1. **Secure Token Storage**: Flutter Secure Storage for JWT tokens
+2. **Password Validation**: Minimum 8 characters with strength checker
+3. **JWT Authentication**: Token-based auth with auto-refresh
+4. **Secure API Calls**: HTTPS in production
+5. **Input Validation**: Form validation on all inputs
+6. **Error Handling**: Safe error messages without exposing sensitive data
+
+## Version History
+
+### v1.0.0 (Current)
+- Initial release
+- Complete authentication system
+- Beneficiary management
+- Prescription upload and management
+- Payment processing
+- Profile management
+- Settings and preferences
+- Full dark mode support
+- Multi-language support (EN/AR)
+- Firebase integration
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is proprietary and confidential.
+
+## Support & Contact
+
+For support or questions:
+- Email: support@hellodoctor.com
+- Website: https://hellodoctor.com
+- Documentation: https://docs.hellodoctor.com
+
+## Acknowledgments
+
+Built with:
+- Flutter & Dart
+- GetX State Management
+- Firebase
+- Hive Database
+- Material Design 3
+
+---
+
+**Made with ❤️ using Flutter**
