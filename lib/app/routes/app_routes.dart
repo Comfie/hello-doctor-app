@@ -6,7 +6,7 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
-  static const HOME = _Paths.HOME;
+  // static const HOME = _Paths.HOME;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const BENEFICIARIES = _Paths.BENEFICIARIES;
   static const ADD_BENEFICIARY = _Paths.ADD_BENEFICIARY;
