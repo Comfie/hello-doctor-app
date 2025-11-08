@@ -96,16 +96,34 @@ class AuthResponse {
   });
 
   factory AuthResponse.fromJson(Map<String, dynamic> json) {
+    // Check if response has the wrapped format (isSuccess/value)
     if (json['value'] != null && json['isSuccess'] == true) {
       return AuthResponse(
         user: AuthUser.fromJson(json['value']),
-        token: json['value']['token'],
+        token: json['value']['token'] ?? json['value']['jwtToken'],
         refreshToken: json['value']['refreshToken'],
         expiresAt: json['value']['expiresAt'] != null
             ? DateTime.parse(json['value']['expiresAt'])
-            : null,
+            : json['value']['refreshTokenExpiration'] != null
+                ? DateTime.parse(json['value']['refreshTokenExpiration'])
+                : null,
       );
     }
+
+    // Handle direct response format (your API's actual format)
+    if (json['jwtToken'] != null || json['token'] != null) {
+      return AuthResponse(
+        user: AuthUser.fromJson(json),
+        token: json['jwtToken'] ?? json['token'],
+        refreshToken: json['refreshToken'],
+        expiresAt: json['refreshTokenExpiration'] != null
+            ? DateTime.parse(json['refreshTokenExpiration'])
+            : json['expiresAt'] != null
+                ? DateTime.parse(json['expiresAt'])
+                : null,
+      );
+    }
+
     return AuthResponse();
   }
 
