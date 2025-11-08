@@ -8,7 +8,7 @@ import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/prescription_controller.dart';
 
 class PrescriptionListView extends GetView<PrescriptionController> {
-  const PrescriptionListView({Key? key}) : super(key: key);
+  const PrescriptionListView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/beneficiary_controller.dart';
 
 class BeneficiaryListView extends GetView<BeneficiaryController> {
-  const BeneficiaryListView({Key? key}) : super(key: key);
+  const BeneficiaryListView({super.key});
 
   @override
   Widget build(BuildContext context) {

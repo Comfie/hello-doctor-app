@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   getData() async {
     // *) perform api call
     await BaseClient.safeApiCall(
-      Constants.todosApiUrl, // url
+      Constants.baseUrl, // url
       RequestType.get, // request type (get,post,delete,put)
       onLoading: () {
         // *) indicate loading state

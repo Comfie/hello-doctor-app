@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:getx_skeleton/app/data/local/my_shared_pref.dart';
-import 'package:getx_skeleton/config/translations/localization_service.dart';
-import 'package:getx_skeleton/config/translations/strings_enum.dart';
+import 'package:hello_doctor_app/app/data/local/my_shared_pref.dart';
+import 'package:hello_doctor_app/config/translations/localization_service.dart';
+import 'package:hello_doctor_app/config/translations/strings_enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 main() async {

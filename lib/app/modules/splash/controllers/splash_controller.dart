@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
+import '../../../routes/app_pages.dart';
 import '../../../services/auth_service.dart';
-import '../../../routes/app_routes.dart';
 
 class SplashController extends GetxController {
   final AuthService _authService = AuthService();

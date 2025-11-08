@@ -4,12 +4,11 @@ import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:intl/intl.dart';
 import '../../../components/my_widgets_animator.dart';
-import '../../../services/api_call_status.dart';
 import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/payment_controller.dart';
 
 class PaymentView extends GetView<PaymentController> {
-  const PaymentView({Key? key}) : super(key: key);
+  const PaymentView({super.key});
 
   @override
   Widget build(BuildContext context) {

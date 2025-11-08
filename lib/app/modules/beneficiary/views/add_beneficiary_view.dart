@@ -6,7 +6,7 @@ import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/add_beneficiary_controller.dart';
 
 class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
-  const AddBeneficiaryView({Key? key}) : super(key: key);
+  const AddBeneficiaryView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -225,7 +225,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
 
   Widget _buildGenderDropdown() {
     return Obx(() => DropdownButtonFormField<String>(
-          value: controller.selectedGender.value,
+          initialValue: controller.selectedGender.value,
           decoration: InputDecoration(
             labelText: 'Gender',
             prefixIcon: Icon(Icons.wc, size: 20.sp),
@@ -262,7 +262,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
 
   Widget _buildRelationshipDropdown() {
     return Obx(() => DropdownButtonFormField<String>(
-          value: controller.selectedRelationship.value,
+          initialValue: controller.selectedRelationship.value,
           decoration: InputDecoration(
             labelText: 'Relationship',
             prefixIcon: Icon(Icons.favorite, size: 20.sp),

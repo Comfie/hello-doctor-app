@@ -190,7 +190,7 @@ android.defaults.buildfeatures.buildconfig=true          # BuildConfig generatio
 ### Potential Issues
 
 1. **Package Name Change**
-   - Old: `com.emad.beltaje.getx_skeleton.getx_skeleton`
+   - Old: `com.emad.beltaje.hello_doctor_app.hello_doctor_app`
    - New: `com.hellodoctor.app`
    - **Impact:** Will require app reinstallation during development
 

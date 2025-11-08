@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hello_doctor_app/app/routes/app_pages.dart';
 import '../../../services/auth_service.dart';
 import '../../../components/custom_snackbar.dart';
 import '../../../components/custom_loading_overlay.dart';
-import '../../../routes/app_routes.dart';
 
 class LoginController extends GetxController {
   final AuthService _authService = AuthService();

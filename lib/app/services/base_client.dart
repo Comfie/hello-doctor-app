@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:getx_skeleton/app/data/local/my_shared_pref.dart';
+import 'package:hello_doctor_app/app/data/local/my_shared_pref.dart';
 import 'package:logger/logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 

@@ -8,7 +8,7 @@ import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/payment_history_controller.dart';
 
 class PaymentHistoryView extends GetView<PaymentHistoryController> {
-  const PaymentHistoryView({Key? key}) : super(key: key);
+  const PaymentHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {

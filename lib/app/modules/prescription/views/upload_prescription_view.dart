@@ -7,7 +7,7 @@ import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/upload_prescription_controller.dart';
 
 class UploadPrescriptionView extends GetView<UploadPrescriptionController> {
-  const UploadPrescriptionView({Key? key}) : super(key: key);
+  const UploadPrescriptionView({super.key});
 
   @override
   Widget build(BuildContext context) {

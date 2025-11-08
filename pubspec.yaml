@@ -21,7 +21,7 @@ dependencies:
   hive_flutter: ^1.1.0 # make it easy to use hive (no need for path provider)
   shared_preferences: ^2.3.3 # shared preferences persistence key value store
 
-  firebase_core: ^3.8.1 # to initialize firebase services
+  firebase_core: ^3.15.2 # to initialize firebase services
   firebase_messaging: ^15.1.4 # fcm services
   awesome_notifications: ^0.9.3+1 # notifications services (will be used for fcm)
 

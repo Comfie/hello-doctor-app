@@ -1,9 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:get/get.dart' hide Response;
 import '../data/models/beneficiary_model.dart';
 import '../../utils/constants.dart';
 import 'base_client.dart';
-import 'api_call_status.dart';
 import 'auth_service.dart';
 
 class BeneficiaryService extends GetxService {
