@@ -125,10 +125,12 @@ class AppPages {
     GetPage(
       name: _Paths.TERMS,
       page: () => const TermsView(),
+      binding: AboutBinding(),
     ),
     GetPage(
       name: _Paths.PRIVACY,
       page: () => const PrivacyPolicyView(),
+      binding: AboutBinding(),
     ),
   ];
 }
