@@ -20,7 +20,7 @@ class ProfileView extends GetView<ProfileController> {
             SliverAppBar(
               expandedHeight: 220.h,
               pinned: true,
-              backgroundColor: LightThemeColors.primaryColor,
+              backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
                   decoration: const BoxDecoration(
@@ -41,7 +41,7 @@ class ProfileView extends GetView<ProfileController> {
                         // Avatar
                         Container(
                           width: 100.w,
-                          height: 100.w,
+                          height: 80.w,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white,

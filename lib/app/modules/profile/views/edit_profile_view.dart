@@ -12,9 +12,13 @@ class EditProfileView extends GetView<EditProfileController> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Edit Profile'),
-        backgroundColor: LightThemeColors.primaryColor,
-        foregroundColor: Colors.white,
+        title: Text(
+          'Edit Profile',
+          style: TextStyle(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         elevation: 0,
       ),
       body: SafeArea(

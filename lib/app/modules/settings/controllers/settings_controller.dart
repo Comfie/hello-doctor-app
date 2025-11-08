@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hello_doctor_app/config/theme/light_theme_colors.dart';
 import '../../../../config/theme/my_theme.dart';
 import '../../../../config/translations/localization_service.dart';
 import '../../../data/local/my_shared_pref.dart';
@@ -38,6 +39,7 @@ class SettingsController extends GetxController {
       'Switched to $themeName',
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 2),
+      backgroundColor: LightThemeColors.backgroundColor
     );
   }
 

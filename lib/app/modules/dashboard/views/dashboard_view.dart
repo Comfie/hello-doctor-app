@@ -191,7 +191,7 @@ class DashboardView extends GetView<DashboardController> {
       ),
       _ActionCardData(
         title: 'Upload Prescription',
-        subtitle: 'Upload new prescription',
+        subtitle: 'New prescription',
         icon: Icons.cloud_upload,
         color: const Color(0xFF4CAF50),
         onTap: () => Get.toNamed('/upload-prescription'),
@@ -208,7 +208,7 @@ class DashboardView extends GetView<DashboardController> {
         subtitle: 'View payment records',
         icon: Icons.payment,
         color: const Color(0xFF9C27B0),
-        onTap: () => Get.toNamed('/payments'),
+        onTap: () => Get.toNamed('/payment-history'),
       ),
     ];
 

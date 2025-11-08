@@ -10,11 +10,15 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Change Password'),
-        backgroundColor: LightThemeColors.primaryColor,
-        foregroundColor: Colors.white,
+        title: Text(
+          'Change Password',
+          style: TextStyle(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         elevation: 0,
       ),
       body: SafeArea(
@@ -365,6 +369,7 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
+                      color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                     ),
                   ),
                 ),

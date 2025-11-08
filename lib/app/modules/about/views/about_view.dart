@@ -26,17 +26,17 @@ class AboutView extends GetView<AboutController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _buildAppLogoSection(),
+            _buildAppLogoSection(context),
             SizedBox(height: 24.h),
-            _buildDescriptionCard(),
+            _buildDescriptionCard(context),
             SizedBox(height: 20.h),
-            _buildFeaturesSection(),
+            _buildFeaturesSection(context),
             SizedBox(height: 20.h),
-            _buildContactSection(),
+            _buildContactSection(context),
             SizedBox(height: 20.h),
-            _buildQuickLinksSection(),
+            _buildQuickLinksSection(context),
             SizedBox(height: 20.h),
-            _buildDeveloperInfo(),
+            _buildDeveloperInfo(context),
             SizedBox(height: 24.h),
           ],
         ),
@@ -189,7 +189,8 @@ class AboutView extends GetView<AboutController> {
           ),
           SizedBox(height: 16.h),
           ...controller.features.map((feature) => _buildFeatureItem(
-                feature['title']!,
+            context,
+            feature['title']!,
                 feature['description']!,
               )),
         ],
@@ -197,7 +198,7 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildFeatureItem(BuildContext contextString title, String description) {
+  Widget _buildFeatureItem(BuildContext context, String title, String description) {
     return Padding(
       padding: EdgeInsets.only(bottom: 16.h),
       child: Row(
@@ -283,11 +284,11 @@ class AboutView extends GetView<AboutController> {
             ],
           ),
           SizedBox(height: 16.h),
-          _buildContactItem(Icons.email_outlined, 'Email', controller.supportEmail),
+          _buildContactItem(context, Icons.email_outlined, 'Email', controller.supportEmail),
           SizedBox(height: 12.h),
-          _buildContactItem(Icons.phone_outlined, 'Phone', controller.supportPhone),
+          _buildContactItem(context, Icons.phone_outlined, 'Phone', controller.supportPhone),
           SizedBox(height: 12.h),
-          _buildContactItem(Icons.language, 'Website', controller.website),
+          _buildContactItem(context, Icons.language, 'Website', controller.website),
           SizedBox(height: 16.h),
           SizedBox(
             width: double.infinity,
@@ -310,7 +311,7 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildContactItem(BuildContext contextIconData icon, String label, String value) {
+  Widget _buildContactItem(BuildContext context, IconData icon, String label, String value) {
     return Row(
       children: [
         Container(

@@ -96,7 +96,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                 itemCount: controller.beneficiaries.length,
                 itemBuilder: (context, index) {
                   final beneficiary = controller.beneficiaries[index];
-                  return _buildBeneficiaryCard(beneficiary);
+                  return _buildBeneficiaryCard(context, beneficiary);
                 },
               ),
             ),

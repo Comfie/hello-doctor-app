@@ -37,6 +37,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 label: 'First Name',
                 icon: Icons.person,
                 validator: (value) => controller.validateRequired(value, 'First Name'),
+                  context: context
               ),
               SizedBox(height: 16.h),
               _buildTextField(
@@ -44,6 +45,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 label: 'Last Name',
                 icon: Icons.person_outline,
                 validator: (value) => controller.validateRequired(value, 'Last Name'),
+                  context: context
               ),
               SizedBox(height: 16.h),
               _buildTextField(
@@ -51,6 +53,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 label: 'ID Number',
                 icon: Icons.badge,
                 validator: controller.validateIdNumber,
+                context: context
               ),
               SizedBox(height: 16.h),
               _buildDateField(context),
@@ -73,6 +76,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 icon: Icons.email,
                 keyboardType: TextInputType.emailAddress,
                 validator: controller.validateEmail,
+                  context: context
               ),
               SizedBox(height: 16.h),
               _buildTextField(
@@ -81,6 +85,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 icon: Icons.phone,
                 keyboardType: TextInputType.phone,
                 validator: controller.validatePhoneNumber,
+                  context: context
               ),
               SizedBox(height: 32.h),
 
@@ -131,7 +136,6 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
 
   Widget _buildTextField({
     required BuildContext context,
-    required BuildContext context,
     required TextEditingController controller,
     required String label,
     required IconData icon,
@@ -169,7 +173,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
     );
   }
 
-  Widget _buildDateField(BuildContext contextBuildContext context) {
+  Widget _buildDateField(BuildContext context) {
     return Obx(() => InkWell(
           onTap: () => controller.selectDateOfBirth(context),
           child: Container(

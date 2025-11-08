@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/light_theme_colors.dart';
+import 'package:get/get.dart';
 
 class TermsView extends StatelessWidget {
   const TermsView({super.key});
@@ -136,7 +137,7 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -201,7 +202,7 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildSection(BuildContext context, String title, String content) {
+  Widget _buildSection(String title, String content) {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.h),
       child: Column(
@@ -230,7 +231,7 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildLastUpdated(BuildContext context) {
+  Widget _buildLastUpdated() {
     return Container(
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
