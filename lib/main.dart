@@ -58,16 +58,16 @@ Future<void> main() async {
               title: "Hello Doctor",
               useInheritedMediaQuery: true,
               debugShowCheckedModeBanner: false,
+              // Theme configuration
+              theme: MyTheme.getThemeData(isLight: true),
+              darkTheme: MyTheme.getThemeData(isLight: false),
+              themeMode: MySharedPref.getThemeIsLight() ? ThemeMode.light : ThemeMode.dark,
               builder: (context,widget) {
-                bool themeIsLight = MySharedPref.getThemeIsLight();
-                return Theme(
-                  data: MyTheme.getThemeData(isLight: themeIsLight),
-                  child: MediaQuery(
-                    // prevent font from scalling (some people use big/small device fonts)
-                    // but we want our app font to still the same and dont get affected
-                    data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
-                    child: widget!,
-                  ),
+                return MediaQuery(
+                  // prevent font from scalling (some people use big/small device fonts)
+                  // but we want our app font to still the same and dont get affected
+                  data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
+                  child: widget!,
                 );
               },
               initialRoute: AppPages.INITIAL, // first screen to show when app is running
