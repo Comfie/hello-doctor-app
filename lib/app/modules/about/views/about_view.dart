@@ -48,7 +48,7 @@ class AboutView extends GetView<AboutController> {
     return Container(
       padding: EdgeInsets.all(24.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -74,7 +74,7 @@ class AboutView extends GetView<AboutController> {
             child: Icon(
               Icons.medical_services,
               size: 60.sp,
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
             ),
           ),
           SizedBox(height: 16.h),
@@ -91,7 +91,7 @@ class AboutView extends GetView<AboutController> {
             'Version ${controller.appVersion} (${controller.buildNumber})',
             style: TextStyle(
               fontSize: 14.sp,
-              color: LightThemeColors.bodySmallTextColor,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -105,7 +105,7 @@ class AboutView extends GetView<AboutController> {
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -131,7 +131,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -141,7 +141,7 @@ class AboutView extends GetView<AboutController> {
             controller.appDescription,
             style: TextStyle(
               fontSize: 14.sp,
-              color: LightThemeColors.bodySmallTextColor,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               height: 1.5,
             ),
             textAlign: TextAlign.justify,
@@ -156,7 +156,7 @@ class AboutView extends GetView<AboutController> {
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -182,7 +182,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -226,7 +226,7 @@ class AboutView extends GetView<AboutController> {
                   style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
-                    color: LightThemeColors.bodyTextColor,
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
                   ),
                 ),
                 SizedBox(height: 4.h),
@@ -234,7 +234,7 @@ class AboutView extends GetView<AboutController> {
                   description,
                   style: TextStyle(
                     fontSize: 13.sp,
-                    color: LightThemeColors.bodySmallTextColor,
+                    color: Theme.of(context).textTheme.bodySmall?.color,
                     height: 1.4,
                   ),
                 ),
@@ -251,7 +251,7 @@ class AboutView extends GetView<AboutController> {
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -277,7 +277,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -334,7 +334,7 @@ class AboutView extends GetView<AboutController> {
                 label,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: LightThemeColors.bodySmallTextColor,
+                  color: Theme.of(context).textTheme.bodySmall?.color,
                 ),
               ),
               Text(
@@ -342,7 +342,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -357,7 +357,7 @@ class AboutView extends GetView<AboutController> {
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -383,7 +383,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: LightThemeColors.bodyTextColor,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -441,14 +441,14 @@ class AboutView extends GetView<AboutController> {
                     style: TextStyle(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
-                      color: LightThemeColors.bodyTextColor,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
                   ),
                   Text(
                     subtitle,
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: LightThemeColors.bodySmallTextColor,
+                      color: Theme.of(context).textTheme.bodySmall?.color,
                     ),
                   ),
                 ],
@@ -490,7 +490,7 @@ class AboutView extends GetView<AboutController> {
           Icon(
             Icons.business,
             size: 40.sp,
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
           ),
           SizedBox(height: 12.h),
           Text(
@@ -498,7 +498,7 @@ class AboutView extends GetView<AboutController> {
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
             ),
           ),
           SizedBox(height: 8.h),

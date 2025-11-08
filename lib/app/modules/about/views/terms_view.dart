@@ -24,7 +24,7 @@ class TermsView extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(20.w),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(16.r),
             boxShadow: [
               BoxShadow(
@@ -190,7 +190,7 @@ class TermsView extends StatelessWidget {
                   'Please read these terms carefully before using Hello Doctor.',
                   style: TextStyle(
                     fontSize: 13.sp,
-                    color: LightThemeColors.bodyTextColor,
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
                   ),
                 ),
               ),
@@ -212,7 +212,7 @@ class TermsView extends StatelessWidget {
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
-              color: LightThemeColors.bodyTextColor,
+              color: Theme.of(context).textTheme.bodyLarge?.color,
             ),
           ),
           SizedBox(height: 8.h),
@@ -220,7 +220,7 @@ class TermsView extends StatelessWidget {
             content,
             style: TextStyle(
               fontSize: 14.sp,
-              color: LightThemeColors.bodySmallTextColor,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               height: 1.6,
             ),
             textAlign: TextAlign.justify,
@@ -234,7 +234,7 @@ class TermsView extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
-        color: LightThemeColors.scaffoldBackgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
@@ -242,14 +242,14 @@ class TermsView extends StatelessWidget {
           Icon(
             Icons.calendar_today,
             size: 16.sp,
-            color: LightThemeColors.bodySmallTextColor,
+            color: Theme.of(context).textTheme.bodySmall?.color,
           ),
           SizedBox(width: 8.w),
           Text(
             'Last updated: November 8, 2025',
             style: TextStyle(
               fontSize: 13.sp,
-              color: LightThemeColors.bodySmallTextColor,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               fontStyle: FontStyle.italic,
             ),
           ),
