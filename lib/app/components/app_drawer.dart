@@ -232,26 +232,74 @@ class AppDrawer extends StatelessWidget {
                   _DrawerMenuItem(
                     icon: Icons.logout_rounded,
                     title: 'Logout',
-                    color: LightThemeColors.errorColor,
+                    color: const Color(0xFFFF5252),
                     onTap: () async {
                       Get.back(); // Close drawer
 
                       // Show confirmation dialog
                       final confirm = await Get.dialog<bool>(
                         AlertDialog(
-                          title: const Text('Logout'),
-                          content: const Text('Are you sure you want to logout?'),
+                          backgroundColor: Theme.of(Get.context!).cardColor,
+                          title: Row(
+                            children: [
+                              Icon(
+                                Icons.logout_rounded,
+                                color: const Color(0xFFFF5252),
+                                size: 24.sp,
+                              ),
+                              SizedBox(width: 12.w),
+                              Text(
+                                'Logout',
+                                style: TextStyle(
+                                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          content: Text(
+                            'Are you sure you want to logout?',
+                            style: TextStyle(
+                              color: Theme.of(Get.context!).textTheme.bodyMedium?.color,
+                              fontSize: 16.sp,
+                            ),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
                           actions: [
                             TextButton(
                               onPressed: () => Get.back(result: false),
-                              child: const Text('Cancel'),
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                              ),
+                              child: Text(
+                                'Cancel',
+                                style: TextStyle(
+                                  color: Theme.of(Get.context!).textTheme.bodyMedium?.color,
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
                             ElevatedButton(
                               onPressed: () => Get.back(result: true),
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: LightThemeColors.errorColor,
+                                backgroundColor: const Color(0xFFFF5252),
+                                foregroundColor: Colors.white,
+                                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
                               ),
-                              child: const Text('Logout'),
+                              child: Text(
+                                'Logout',
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -347,8 +395,9 @@ class _DrawerMenuItem extends StatelessWidget {
         size: 20.sp,
       ),
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(horizontal: 20.w),
+      contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
       dense: false,
+      minVerticalPadding: 8.h,
     );
   }
 }
