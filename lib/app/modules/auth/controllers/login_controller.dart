@@ -76,7 +76,7 @@ class LoginController extends GetxController {
               message: 'Welcome back, ${response.user?.firstName}!',
             );
             // Navigate to dashboard
-            Get.offAllNamed(Routes.HOME);
+            Get.offAllNamed(Routes.DASHBOARD);
           },
           onError: (error) {
             CustomSnackBar.showCustomErrorSnackBar(
