@@ -11,7 +11,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Add Beneficiary',
@@ -124,12 +124,14 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
       style: TextStyle(
         fontSize: 18.sp,
         fontWeight: FontWeight.bold,
-        color: Theme.of(context).textTheme.bodyLarge?.color,
+        color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
       ),
     );
   }
 
   Widget _buildTextField({
+    required BuildContext context,
+    required BuildContext context,
     required TextEditingController controller,
     required String label,
     required IconData icon,
@@ -162,18 +164,18 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
           borderSide: const BorderSide(color: Colors.red, width: 1),
         ),
         filled: true,
-        fillColor: Theme.of(context).cardColor,
+        fillColor: Theme.of(Get.context!).cardColor,
       ),
     );
   }
 
-  Widget _buildDateField(BuildContext context) {
+  Widget _buildDateField(BuildContext contextBuildContext context) {
     return Obx(() => InkWell(
           onTap: () => controller.selectDateOfBirth(context),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
             decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
+              color: Theme.of(Get.context!).cardColor,
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(color: Colors.grey, width: 1),
             ),
@@ -182,7 +184,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 Icon(
                   Icons.calendar_today,
                   size: 20.sp,
-                  color: Theme.of(context).textTheme.bodySmall?.color,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
                 SizedBox(width: 12.w),
                 Expanded(
@@ -193,7 +195,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                         'Date of Birth',
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Theme.of(context).textTheme.bodySmall?.color,
+                          color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                         ),
                       ),
                       SizedBox(height: 2.h),
@@ -215,7 +217,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
                 Icon(
                   Icons.arrow_drop_down,
                   size: 24.sp,
-                  color: Theme.of(context).textTheme.bodySmall?.color,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
               ],
             ),
@@ -244,7 +246,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
               ),
             ),
             filled: true,
-            fillColor: Theme.of(context).cardColor,
+            fillColor: Theme.of(Get.context!).cardColor,
           ),
           items: controller.genderOptions.map((String gender) {
             return DropdownMenuItem<String>(
@@ -281,7 +283,7 @@ class AddBeneficiaryView extends GetView<AddBeneficiaryController> {
               ),
             ),
             filled: true,
-            fillColor: Theme.of(context).cardColor,
+            fillColor: Theme.of(Get.context!).cardColor,
           ),
           items: controller.relationshipOptions.map((String relationship) {
             return DropdownMenuItem<String>(

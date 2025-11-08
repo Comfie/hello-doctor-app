@@ -24,7 +24,7 @@ class ChangePasswordController extends GetxController {
   final RxString confirmPasswordError = ''.obs;
   final RxDouble passwordStrength = 0.0.obs;
   final RxString passwordStrengthText = ''.obs;
-  final RxColor passwordStrengthColor = const Color(0xFFEF5350).obs;
+  final Rx<Color> passwordStrengthColor = const Color(0xFFEF5350).obs;
 
   // Form key
   final formKey = GlobalKey<FormState>();

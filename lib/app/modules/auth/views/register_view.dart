@@ -11,7 +11,7 @@ class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: LightThemeColors.primaryColor,
         elevation: 0,
@@ -42,7 +42,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 24.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.displayLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.displayLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -50,7 +50,7 @@ class RegisterView extends GetView<RegisterController> {
                 'Please fill in the details to create your account',
                 style: TextStyle(
                   fontSize: 14.sp,
-                  color: Theme.of(context).textTheme.bodySmall?.color,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
               ),
 
@@ -58,6 +58,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // First Name
               _buildTextField(
+                context: context,
                 label: 'First Name',
                 controller: controller.firstNameController,
                 errorObs: controller.firstNameError,
@@ -70,6 +71,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // Last Name
               _buildTextField(
+                context: context,
                 label: 'Last Name',
                 controller: controller.lastNameController,
                 errorObs: controller.lastNameError,
@@ -82,6 +84,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // Email
               _buildTextField(
+                context: context,
                 label: 'Email',
                 controller: controller.emailController,
                 errorObs: controller.emailError,
@@ -94,6 +97,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // Phone Number
               _buildTextField(
+                context: context,
                 label: 'Phone Number',
                 controller: controller.phoneNumberController,
                 errorObs: controller.phoneNumberError,
@@ -106,6 +110,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // ID Number
               _buildTextField(
+                context: context,
                 label: 'ID Number',
                 controller: controller.idNumberController,
                 errorObs: controller.idNumberError,
@@ -122,7 +127,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -135,7 +140,7 @@ class RegisterView extends GetView<RegisterController> {
                       vertical: 16.h,
                     ),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
+                      color: Theme.of(Get.context!).cardColor,
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: controller.dateOfBirthError.value.isEmpty
@@ -193,7 +198,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -201,7 +206,7 @@ class RegisterView extends GetView<RegisterController> {
                 () => Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
+                    color: Theme.of(Get.context!).cardColor,
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: controller.genderError.value.isEmpty
@@ -245,7 +250,7 @@ class RegisterView extends GetView<RegisterController> {
                                 gender,
                                 style: TextStyle(
                                   fontSize: 14.sp,
-                                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                                 ),
                               ),
                             ],
@@ -280,7 +285,7 @@ class RegisterView extends GetView<RegisterController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
               SizedBox(height: 8.h),
@@ -294,7 +299,7 @@ class RegisterView extends GetView<RegisterController> {
                         ? null
                         : controller.addressError.value,
                     filled: true,
-                    fillColor: Theme.of(context).cardColor,
+                    fillColor: Theme.of(Get.context!).cardColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.r),
                       borderSide: const BorderSide(
@@ -337,6 +342,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // Password
               _buildPasswordField(
+                context: context,
                 label: 'Password',
                 controller: controller.passwordController,
                 errorObs: controller.passwordError,
@@ -349,6 +355,7 @@ class RegisterView extends GetView<RegisterController> {
 
               // Confirm Password
               _buildPasswordField(
+                context: context,
                 label: 'Confirm Password',
                 controller: controller.confirmPasswordController,
                 errorObs: controller.confirmPasswordError,
@@ -395,7 +402,7 @@ class RegisterView extends GetView<RegisterController> {
                       'Already have an account? ',
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
+                        color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                       ),
                     ),
                     GestureDetector(
@@ -422,6 +429,7 @@ class RegisterView extends GetView<RegisterController> {
   }
 
   Widget _buildTextField({
+    required BuildContext context,
     required String label,
     required TextEditingController controller,
     required RxString errorObs,
@@ -437,7 +445,7 @@ class RegisterView extends GetView<RegisterController> {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: Theme.of(context).textTheme.bodyLarge?.color,
+            color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
           ),
         ),
         SizedBox(height: 8.h),
@@ -450,7 +458,7 @@ class RegisterView extends GetView<RegisterController> {
               prefixIcon: Icon(icon, size: 20.sp),
               errorText: errorObs.value.isEmpty ? null : errorObs.value,
               filled: true,
-              fillColor: Theme.of(context).cardColor,
+              fillColor: Theme.of(Get.context!).cardColor,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.r),
                 borderSide: const BorderSide(
@@ -493,6 +501,7 @@ class RegisterView extends GetView<RegisterController> {
   }
 
   Widget _buildPasswordField({
+    required BuildContext context,
     required String label,
     required TextEditingController controller,
     required RxString errorObs,
@@ -508,7 +517,7 @@ class RegisterView extends GetView<RegisterController> {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: Theme.of(context).textTheme.bodyLarge?.color,
+            color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
           ),
         ),
         SizedBox(height: 8.h),
@@ -530,7 +539,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
               errorText: errorObs.value.isEmpty ? null : errorObs.value,
               filled: true,
-              fillColor: Theme.of(context).cardColor,
+              fillColor: Theme.of(Get.context!).cardColor,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.r),
                 borderSide: const BorderSide(

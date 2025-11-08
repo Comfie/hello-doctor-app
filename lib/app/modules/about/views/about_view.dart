@@ -10,7 +10,7 @@ class AboutView extends GetView<AboutController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'About Hello Doctor',
@@ -44,11 +44,11 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildAppLogoSection() {
+  Widget _buildAppLogoSection(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(24.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -74,7 +74,7 @@ class AboutView extends GetView<AboutController> {
             child: Icon(
               Icons.medical_services,
               size: 60.sp,
-              color: Theme.of(context).cardColor,
+              color: Theme.of(Get.context!).cardColor,
             ),
           ),
           SizedBox(height: 16.h),
@@ -91,7 +91,7 @@ class AboutView extends GetView<AboutController> {
             'Version ${controller.appVersion} (${controller.buildNumber})',
             style: TextStyle(
               fontSize: 14.sp,
-              color: Theme.of(context).textTheme.bodySmall?.color,
+              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -100,12 +100,12 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildDescriptionCard() {
+  Widget _buildDescriptionCard(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -131,7 +131,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -141,7 +141,7 @@ class AboutView extends GetView<AboutController> {
             controller.appDescription,
             style: TextStyle(
               fontSize: 14.sp,
-              color: Theme.of(context).textTheme.bodySmall?.color,
+              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
               height: 1.5,
             ),
             textAlign: TextAlign.justify,
@@ -151,12 +151,12 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildFeaturesSection() {
+  Widget _buildFeaturesSection(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -182,7 +182,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -197,7 +197,7 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildFeatureItem(String title, String description) {
+  Widget _buildFeatureItem(BuildContext contextString title, String description) {
     return Padding(
       padding: EdgeInsets.only(bottom: 16.h),
       child: Row(
@@ -226,7 +226,7 @@ class AboutView extends GetView<AboutController> {
                   style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
-                    color: Theme.of(context).textTheme.bodyLarge?.color,
+                    color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                   ),
                 ),
                 SizedBox(height: 4.h),
@@ -234,7 +234,7 @@ class AboutView extends GetView<AboutController> {
                   description,
                   style: TextStyle(
                     fontSize: 13.sp,
-                    color: Theme.of(context).textTheme.bodySmall?.color,
+                    color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                     height: 1.4,
                   ),
                 ),
@@ -246,12 +246,12 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildContactSection() {
+  Widget _buildContactSection(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -277,7 +277,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -310,7 +310,7 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildContactItem(IconData icon, String label, String value) {
+  Widget _buildContactItem(BuildContext contextIconData icon, String label, String value) {
     return Row(
       children: [
         Container(
@@ -334,7 +334,7 @@ class AboutView extends GetView<AboutController> {
                 label,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: Theme.of(context).textTheme.bodySmall?.color,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
               ),
               Text(
@@ -342,7 +342,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -352,12 +352,12 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildQuickLinksSection() {
+  Widget _buildQuickLinksSection(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(Get.context!).cardColor,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
@@ -383,7 +383,7 @@ class AboutView extends GetView<AboutController> {
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                  color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                 ),
               ),
             ],
@@ -441,14 +441,14 @@ class AboutView extends GetView<AboutController> {
                     style: TextStyle(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
-                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                      color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                     ),
                   ),
                   Text(
                     subtitle,
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: Theme.of(context).textTheme.bodySmall?.color,
+                      color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                     ),
                   ),
                 ],
@@ -465,7 +465,7 @@ class AboutView extends GetView<AboutController> {
     );
   }
 
-  Widget _buildDeveloperInfo() {
+  Widget _buildDeveloperInfo(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(20.w),
@@ -490,7 +490,7 @@ class AboutView extends GetView<AboutController> {
           Icon(
             Icons.business,
             size: 40.sp,
-            color: Theme.of(context).cardColor,
+            color: Theme.of(Get.context!).cardColor,
           ),
           SizedBox(height: 12.h),
           Text(
@@ -498,7 +498,7 @@ class AboutView extends GetView<AboutController> {
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).cardColor,
+              color: Theme.of(Get.context!).cardColor,
             ),
           ),
           SizedBox(height: 8.h),

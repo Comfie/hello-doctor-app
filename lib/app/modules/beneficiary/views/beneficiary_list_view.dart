@@ -12,7 +12,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Beneficiaries',
@@ -42,7 +42,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                     'Failed to load beneficiaries',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                      color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                     ),
                   ),
                   SizedBox(height: 16.h),
@@ -61,7 +61,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                   Icon(
                     Icons.people_outline,
                     size: 80.sp,
-                    color: Theme.of(context).textTheme.bodySmall?.color,
+                    color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                   ),
                   SizedBox(height: 16.h),
                   Text(
@@ -69,7 +69,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                      color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -77,7 +77,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                     'Add your first beneficiary to get started',
                     style: TextStyle(
                       fontSize: 14.sp,
-                      color: Theme.of(context).textTheme.bodySmall?.color,
+                      color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                     ),
                   ),
                   SizedBox(height: 24.h),
@@ -110,7 +110,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
     );
   }
 
-  Widget _buildBeneficiaryCard(Beneficiary beneficiary) {
+  Widget _buildBeneficiaryCard(BuildContext context, Beneficiary beneficiary) {
     return Dismissible(
       key: Key(beneficiary.id.toString()),
       direction: DismissDirection.endToStart,
@@ -187,7 +187,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).textTheme.bodyLarge?.color,
+                          color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                         ),
                       ),
                       SizedBox(height: 4.h),
@@ -196,28 +196,28 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                           Icon(
                             Icons.favorite,
                             size: 14.sp,
-                            color: Theme.of(context).textTheme.bodySmall?.color,
+                            color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                           ),
                           SizedBox(width: 4.w),
                           Text(
                             beneficiary.relationship,
                             style: TextStyle(
                               fontSize: 13.sp,
-                              color: Theme.of(context).textTheme.bodySmall?.color,
+                              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                             ),
                           ),
                           SizedBox(width: 12.w),
                           Icon(
                             Icons.cake,
                             size: 14.sp,
-                            color: Theme.of(context).textTheme.bodySmall?.color,
+                            color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                           ),
                           SizedBox(width: 4.w),
                           Text(
                             '${beneficiary.age} years',
                             style: TextStyle(
                               fontSize: 13.sp,
-                              color: Theme.of(context).textTheme.bodySmall?.color,
+                              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                             ),
                           ),
                         ],
@@ -230,7 +230,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                               Icon(
                                 Icons.phone,
                                 size: 14.sp,
-                                color: Theme.of(context).textTheme.bodySmall?.color,
+                                color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                               ),
                               SizedBox(width: 4.w),
                               Flexible(
@@ -238,7 +238,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                                   beneficiary.phoneNumber!,
                                   style: TextStyle(
                                     fontSize: 12.sp,
-                                    color: Theme.of(context).textTheme.bodySmall?.color,
+                                    color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -253,7 +253,7 @@ class BeneficiaryListView extends GetView<BeneficiaryController> {
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 16.sp,
-                  color: Theme.of(context).textTheme.bodySmall?.color,
+                  color: Theme.of(Get.context!).textTheme.bodySmall?.color,
                 ),
               ],
             ),

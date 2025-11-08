@@ -8,7 +8,7 @@ class TermsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(Get.context!).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Terms of Service',
@@ -24,7 +24,7 @@ class TermsView extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(20.w),
           decoration: BoxDecoration(
-            color: Theme.of(context).cardColor,
+            color: Theme.of(Get.context!).cardColor,
             borderRadius: BorderRadius.circular(16.r),
             boxShadow: [
               BoxShadow(
@@ -136,7 +136,7 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -190,7 +190,7 @@ class TermsView extends StatelessWidget {
                   'Please read these terms carefully before using Hello Doctor.',
                   style: TextStyle(
                     fontSize: 13.sp,
-                    color: Theme.of(context).textTheme.bodyLarge?.color,
+                    color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
                   ),
                 ),
               ),
@@ -201,7 +201,7 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildSection(String title, String content) {
+  Widget _buildSection(BuildContext context, String title, String content) {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.h),
       child: Column(
@@ -212,7 +212,7 @@ class TermsView extends StatelessWidget {
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).textTheme.bodyLarge?.color,
+              color: Theme.of(Get.context!).textTheme.bodyLarge?.color,
             ),
           ),
           SizedBox(height: 8.h),
@@ -220,7 +220,7 @@ class TermsView extends StatelessWidget {
             content,
             style: TextStyle(
               fontSize: 14.sp,
-              color: Theme.of(context).textTheme.bodySmall?.color,
+              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
               height: 1.6,
             ),
             textAlign: TextAlign.justify,
@@ -230,11 +230,11 @@ class TermsView extends StatelessWidget {
     );
   }
 
-  Widget _buildLastUpdated() {
+  Widget _buildLastUpdated(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Theme.of(Get.context!).scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
@@ -242,14 +242,14 @@ class TermsView extends StatelessWidget {
           Icon(
             Icons.calendar_today,
             size: 16.sp,
-            color: Theme.of(context).textTheme.bodySmall?.color,
+            color: Theme.of(Get.context!).textTheme.bodySmall?.color,
           ),
           SizedBox(width: 8.w),
           Text(
             'Last updated: November 8, 2025',
             style: TextStyle(
               fontSize: 13.sp,
-              color: Theme.of(context).textTheme.bodySmall?.color,
+              color: Theme.of(Get.context!).textTheme.bodySmall?.color,
               fontStyle: FontStyle.italic,
             ),
           ),
