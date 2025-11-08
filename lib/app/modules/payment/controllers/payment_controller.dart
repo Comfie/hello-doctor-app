@@ -33,11 +33,14 @@ class PaymentController extends GetxController {
     // Get arguments
     final args = Get.arguments as Map<String, dynamic>?;
     if (args == null) {
-      CustomSnackBar.showCustomErrorSnackBar(
-        title: 'Error',
-        message: 'Invalid payment parameters',
-      );
-      Get.back();
+      // Defer showing snackbar and navigation until after build completes
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CustomSnackBar.showCustomErrorSnackBar(
+          title: 'Error',
+          message: 'Invalid payment parameters',
+        );
+        Get.back();
+      });
       return;
     }
 
