@@ -15,6 +15,13 @@ abstract class Routes {
   static const PRESCRIPTION_DETAILS = _Paths.PRESCRIPTION_DETAILS;
   static const PAYMENT = _Paths.PAYMENT;
   static const PAYMENT_HISTORY = _Paths.PAYMENT_HISTORY;
+  static const PROFILE = _Paths.PROFILE;
+  static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
+  static const SETTINGS = _Paths.SETTINGS;
+  static const ABOUT = _Paths.ABOUT;
+  static const TERMS = _Paths.TERMS;
+  static const PRIVACY = _Paths.PRIVACY;
 }
 
 abstract class _Paths {
@@ -31,4 +38,11 @@ abstract class _Paths {
   static const PRESCRIPTION_DETAILS = '/prescription-details';
   static const PAYMENT = '/payment';
   static const PAYMENT_HISTORY = '/payment-history';
+  static const PROFILE = '/profile';
+  static const EDIT_PROFILE = '/edit-profile';
+  static const CHANGE_PASSWORD = '/change-password';
+  static const SETTINGS = '/settings';
+  static const ABOUT = '/about';
+  static const TERMS = '/terms';
+  static const PRIVACY = '/privacy';
 }

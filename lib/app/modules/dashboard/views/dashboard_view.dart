@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../components/my_widgets_animator.dart';
+import '../../../components/app_drawer.dart';
 import '../../../../config/theme/light_theme_colors.dart';
 import '../controllers/dashboard_controller.dart';
 
@@ -12,6 +13,7 @@ class DashboardView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: LightThemeColors.scaffoldBackgroundColor,
+      drawer: const AppDrawer(),
       appBar: AppBar(
         title: Obx(() => Text(
               'Hello, ${controller.userName}',
@@ -23,9 +25,11 @@ class DashboardView extends GetView<DashboardController> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () => _showLogoutDialog(context),
-            tooltip: 'Logout',
+            icon: const Icon(Icons.notifications_outlined),
+            onPressed: () {
+              // TODO: Implement notifications
+            },
+            tooltip: 'Notifications',
           ),
           SizedBox(width: 8.w),
         ],

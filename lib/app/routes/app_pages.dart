@@ -21,6 +21,18 @@ import '../modules/payment/bindings/payment_binding.dart';
 import '../modules/payment/bindings/payment_history_binding.dart';
 import '../modules/payment/views/payment_view.dart';
 import '../modules/payment/views/payment_history_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/bindings/edit_profile_binding.dart';
+import '../modules/profile/bindings/change_password_binding.dart';
+import '../modules/profile/views/profile_view.dart';
+import '../modules/profile/views/edit_profile_view.dart';
+import '../modules/profile/views/change_password_view.dart';
+import '../modules/settings/bindings/settings_binding.dart';
+import '../modules/settings/views/settings_view.dart';
+import '../modules/about/bindings/about_binding.dart';
+import '../modules/about/views/about_view.dart';
+import '../modules/about/views/terms_view.dart';
+import '../modules/about/views/privacy_policy_view.dart';
 
 part 'app_routes.dart';
 
@@ -84,6 +96,39 @@ class AppPages {
       name: _Paths.PAYMENT_HISTORY,
       page: () => const PaymentHistoryView(),
       binding: PaymentHistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_PROFILE,
+      page: () => const EditProfileView(),
+      binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHANGE_PASSWORD,
+      page: () => const ChangePasswordView(),
+      binding: ChangePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTINGS,
+      page: () => const SettingsView(),
+      binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => const AboutView(),
+      binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.TERMS,
+      page: () => const TermsView(),
+    ),
+    GetPage(
+      name: _Paths.PRIVACY,
+      page: () => const PrivacyPolicyView(),
     ),
   ];
 }
