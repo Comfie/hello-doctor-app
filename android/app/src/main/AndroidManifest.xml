@@ -1,9 +1,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.emad.beltaje.getx_skeleton.getx_skeleton">
+    xmlns:tools="http://schemas.android.com/tools">
+   <!-- Permissions -->
+   <uses-permission android:name="android.permission.INTERNET"/>
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+   <uses-permission android:name="android.permission.CAMERA"/>
+   <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+       android:maxSdkVersion="32"/>
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+       android:maxSdkVersion="32"
+       android:tools:ignore="ScopedStorage"/>
+   <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+   <uses-feature android:name="android.hardware.camera" android:required="false"/>
+   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+
    <application
-        android:label="getx_skeleton"
+        android:label="Hello Doctor"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"

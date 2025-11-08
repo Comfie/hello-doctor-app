@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:getx_skeleton/app/components/my_widgets_animator.dart';
-import 'package:getx_skeleton/app/services/api_call_status.dart';
+import 'package:hello_doctor_app/app/components/my_widgets_animator.dart';
+import 'package:hello_doctor_app/app/services/api_call_status.dart';
+import 'package:hello_doctor_app/app/services/api_call_status.dart';
 
 
 /// widget animator test code to make sure the widget switch
@@ -14,7 +15,7 @@ class TestController extends GetxController {
 }
 
 class TestView extends StatelessWidget {
-  const TestView({Key? key}) : super(key: key);
+  const TestView({super.key});
 
   @override
   Widget build(BuildContext context) {

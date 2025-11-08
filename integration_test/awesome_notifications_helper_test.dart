@@ -2,7 +2,7 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:getx_skeleton/utils/awesome_notifications_helper.dart';
+import 'package:hello_doctor_app/utils/awesome_notifications_helper.dart';
 import 'package:integration_test/integration_test.dart';
 
 
@@ -104,7 +104,7 @@ class TestController extends GetxController {
 }
 
 class TestWidget extends GetWidget<TestController> {
-  const TestWidget({Key? key}) : super(key: key);
+  const TestWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +126,6 @@ class TestWidget extends GetWidget<TestController> {
           children: [
             FloatingActionButton(
               key: const ValueKey('general_notifications_fap'),
-              child: const Icon(Icons.add,color: Colors.white,),
               backgroundColor: Colors.purple,
               onPressed: () async {
                 await AwesomeNotificationsHelper.showNotification(
@@ -139,11 +138,11 @@ class TestWidget extends GetWidget<TestController> {
                     ]
                 );
               },
+              child: const Icon(Icons.add,color: Colors.white,),
             ),
             const SizedBox(width: 20,),
             FloatingActionButton(
               key: const ValueKey('chat_notifications_fap'),
-              child: const Icon(Icons.add,color: Colors.white,),
               backgroundColor: Colors.blue,
               onPressed: () async {
                 await AwesomeNotificationsHelper.showNotification(
@@ -158,6 +157,7 @@ class TestWidget extends GetWidget<TestController> {
                     ]
                 );
               },
+              child: const Icon(Icons.add,color: Colors.white,),
             ),
           ],
         ),

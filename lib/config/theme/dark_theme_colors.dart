@@ -1,60 +1,80 @@
 import 'package:flutter/material.dart';
 
-// TODO add your dark theme colors palette
+// Modern Medical Theme Colors - Dark Mode
 class DarkThemeColors
 {
-  // PRIMARY
-  static const Color primaryColor = Color(0xFFFF8C00);
+  // PRIMARY - Medical Blue (lighter for dark mode)
+  static const Color primaryColor = Color(0xFF64B5F6);
+  static const Color primaryLight = Color(0xFF9BE7FF);
+  static const Color primaryDark = Color(0xFF2286C3);
 
-  // SECONDARY
-  static Color accentColor = Colors.blueAccent;
+  // SECONDARY - Health Green
+  static const Color accentColor = Color(0xFF69F0AE);
+  static const Color accentLight = Color(0xFF9FFFE0);
+  static const Color accentDark = Color(0xFF2BDE7E);
 
   //Appbar
-  static const Color appbarColor = Colors.black;
+  static const Color appbarColor = Color(0xFF1E1E1E);
 
   //SCAFFOLD
-  static const Color scaffoldBackgroundColor = Color(0xff2D2D2D);
-  static const Color backgroundColor = Color(0xff2D2D2D);
-  static const Color dividerColor = Color(0xff686868);
-  static const Color cardColor = Color(0xff1e2336);
+  static const Color scaffoldBackgroundColor = Color(0xFF121212);
+  static const Color backgroundColor = Color(0xFF1E1E1E);
+  static const Color dividerColor = Color(0xFF424242);
+  static const Color cardColor = Color(0xFF2C2C2C);
+  static const Color cardShadowColor = Color(0x33000000);
 
   //ICONS
   static const Color appBarIconsColor = Colors.white;
-  static const Color iconColor = primaryColor;
+  static const Color iconColor = Color(0xFFE0E0E0);
+  static const Color iconColorLight = Color(0xFFBDBDBD);
 
   //BUTTON
   static const Color buttonColor = primaryColor;
-  static const Color buttonTextColor = Colors.black;
-  static const Color buttonDisabledColor = Colors.grey;
-  static const Color buttonDisabledTextColor = Colors.black;
+  static const Color buttonTextColor = Color(0xFF121212);
+  static const Color buttonDisabledColor = Color(0xFF424242);
+  static const Color buttonDisabledTextColor = Color(0xFF757575);
 
   //TEXT
-  static const Color bodyTextColor = Colors.white70;
-  static const Color displayTextColor = Colors.white;
-  static const Color bodySmallTextColor =  Color(0xff7C7C7C);
-  static const Color hintTextColor = Color(0xff686868);
+  static const Color bodyTextColor = Color(0xFFE0E0E0);
+  static const Color displayTextColor = Color(0xFFFFFFFF);
+  static const Color bodySmallTextColor = Color(0xFFBDBDBD);
+  static const Color hintTextColor = Color(0xFF757575);
 
   //chip
-  static const Color chipBackground = primaryColor;
-  static const Color chipTextColor = Colors.black87;
+  static const Color chipBackground = Color(0xFF1E3A5F);
+  static const Color chipTextColor = primaryColor;
 
   // progress bar indicator
-  static const Color progressIndicatorColor = Color(0xFF40A76A);
+  static const Color progressIndicatorColor = accentColor;
 
   // list tile
-  static const Color listTileTitleColor = Colors.white;
-  static const Color listTileSubtitleColor = Colors.white;
-  static const Color listTileBackgroundColor = Color(0xFF414141);
-  static const Color listTileIconColor = Colors.white;
+  static const Color listTileTitleColor = Color(0xFFE0E0E0);
+  static const Color listTileSubtitleColor = Color(0xFFBDBDBD);
+  static const Color listTileBackgroundColor = Color(0xFF2C2C2C);
+  static const Color listTileIconColor = Color(0xFFBDBDBD);
+
+  // Status Colors
+  static const Color successColor = Color(0xFF66BB6A);
+  static const Color warningColor = Color(0xFFFFB74D);
+  static const Color errorColor = Color(0xFFEF5350);
+  static const Color infoColor = Color(0xFF42A5F5);
+
+  // Prescription Status Colors
+  static const Color statusPending = Color(0xFFFFB74D);
+  static const Color statusApproved = Color(0xFF66BB6A);
+  static const Color statusRejected = Color(0xFFEF5350);
+  static const Color statusDelivered = Color(0xFF42A5F5);
 
   //------------------- custom theme (extensions) ------------------- //
   // header containers
-  static const Color headerContainerBackgroundColor = Color(0XFFf8a319);
+  static const Color headerContainerBackgroundColor = Color(0xFF1E3A5F);
+  static const Color headerContainerGradientStart = Color(0xFF1E3A5F);
+  static const Color headerContainerGradientEnd = Color(0xFF2C4A6F);
 
-  // employee list item
-  static const Color employeeListItemBackgroundColor = Color(0xFF393939);
-  static const Color employeeListItemNameColor = Colors.white;
-  static const Color employeeListItemSubtitleColor = Color(0xFFEDEDED);
-  static const Color employeeListItemIconsColor = Color(0xFFEDEDED);
+  // beneficiary/employee list item
+  static const Color employeeListItemBackgroundColor = Color(0xFF2C2C2C);
+  static const Color employeeListItemNameColor = Color(0xFFE0E0E0);
+  static const Color employeeListItemSubtitleColor = Color(0xFFBDBDBD);
+  static const Color employeeListItemIconsColor = primaryColor;
 
 }

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,6 +15,9 @@ class MySharedPref {
   static const String _fcmTokenKey = 'fcm_token';
   static const String _currentLocalKey = 'current_local';
   static const String _lightThemeKey = 'is_theme_light';
+  static const String _themeModeKey = 'theme_mode'; // system/light/dark
+  static const String _userDataKey = 'user_data';
+  static const String _userIdKey = 'user_id';
 
   /// init get storage services
   static Future<void> init() async {
@@ -31,6 +35,14 @@ class MySharedPref {
   /// get if the current theme type is light
   static bool getThemeIsLight() =>
       _sharedPreferences.getBool(_lightThemeKey) ?? true; // todo set the default theme (true for light, false for dark)
+
+  /// set theme mode (system/light/dark)
+  static Future<void> setThemeMode(String themeMode) =>
+      _sharedPreferences.setString(_themeModeKey, themeMode);
+
+  /// get theme mode (system/light/dark) - default is system
+  static String getThemeMode() =>
+      _sharedPreferences.getString(_themeModeKey) ?? 'system';
 
   /// save current locale
   static Future<void> setCurrentLanguage(String languageCode) =>
@@ -53,6 +65,33 @@ class MySharedPref {
   /// get authorization token
   static String? getFcmToken() =>
       _sharedPreferences.getString(_fcmTokenKey);
+
+  /// save user data
+  static Future<void> setUserData(Map<String, dynamic> userData) =>
+      _sharedPreferences.setString(_userDataKey, jsonEncode(userData));
+
+  /// get user data
+  static Map<String, dynamic>? getUserData() {
+    String? userDataString = _sharedPreferences.getString(_userDataKey);
+    if (userDataString != null) {
+      return jsonDecode(userDataString);
+    }
+    return null;
+  }
+
+  /// save user id
+  static Future<void> setUserId(String userId) =>
+      _sharedPreferences.setString(_userIdKey, userId);
+
+  /// get user id
+  static String? getUserId() =>
+      _sharedPreferences.getString(_userIdKey);
+
+  /// clear user data
+  static Future<void> clearUserData() async {
+    await _sharedPreferences.remove(_userDataKey);
+    await _sharedPreferences.remove(_userIdKey);
+  }
 
   /// clear all data from shared pref
   static Future<void> clear() async => await _sharedPreferences.clear();

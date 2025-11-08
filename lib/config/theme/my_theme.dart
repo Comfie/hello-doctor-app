@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:getx_skeleton/config/theme/my_fonts.dart';
+import 'package:hello_doctor_app/config/theme/my_fonts.dart';
 
 import '../../app/data/local/my_shared_pref.dart';
 import 'dark_theme_colors.dart';
 import 'light_theme_colors.dart';
 import 'my_styles.dart';
-import 'theme_extensions/employee_list_item_theme_data.dart';
 
 class MyTheme {
   static getThemeData({required bool isLight}){
@@ -82,6 +80,40 @@ class MyTheme {
 
     // *) let GetX change theme
     Get.changeThemeMode(!isLightTheme ? ThemeMode.light : ThemeMode.dark);
+  }
+
+  /// Set specific theme mode (system/light/dark)
+  static Future<void> setThemeMode(String mode) async {
+    await MySharedPref.setThemeMode(mode);
+
+    switch (mode) {
+      case 'system':
+        Get.changeThemeMode(ThemeMode.system);
+        break;
+      case 'light':
+        await MySharedPref.setThemeIsLight(true);
+        Get.changeThemeMode(ThemeMode.light);
+        break;
+      case 'dark':
+        await MySharedPref.setThemeIsLight(false);
+        Get.changeThemeMode(ThemeMode.dark);
+        break;
+    }
+  }
+
+  /// Get current theme mode
+  static ThemeMode getThemeMode() {
+    String mode = MySharedPref.getThemeMode();
+    switch (mode) {
+      case 'system':
+        return ThemeMode.system;
+      case 'light':
+        return ThemeMode.light;
+      case 'dark':
+        return ThemeMode.dark;
+      default:
+        return ThemeMode.system;
+    }
   }
 
   /// check if the theme is light or dark

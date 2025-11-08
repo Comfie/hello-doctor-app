@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:getx_skeleton/app/data/local/my_shared_pref.dart';
+import 'package:hello_doctor_app/app/data/local/my_shared_pref.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// test shared pref (read & write)
