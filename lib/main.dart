@@ -61,7 +61,7 @@ Future<void> main() async {
               // Theme configuration
               theme: MyTheme.getThemeData(isLight: true),
               darkTheme: MyTheme.getThemeData(isLight: false),
-              themeMode: MySharedPref.getThemeIsLight() ? ThemeMode.light : ThemeMode.dark,
+              themeMode: MyTheme.getThemeMode(),
               builder: (context,widget) {
                 return MediaQuery(
                   // prevent font from scalling (some people use big/small device fonts)

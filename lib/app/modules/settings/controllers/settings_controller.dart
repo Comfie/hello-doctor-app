@@ -4,8 +4,8 @@ import '../../../../config/translations/localization_service.dart';
 import '../../../data/local/my_shared_pref.dart';
 
 class SettingsController extends GetxController {
-  // Theme state
-  final isDarkMode = false.obs;
+  // Theme state - now supports system/light/dark
+  final currentThemeMode = 'system'.obs;
 
   // Language state
   final currentLanguage = 'en'.obs;
@@ -22,14 +22,37 @@ class SettingsController extends GetxController {
 
   // Load current settings from storage
   void _loadSettings() {
-    isDarkMode.value = !MySharedPref.getThemeIsLight();
+    currentThemeMode.value = MySharedPref.getThemeMode();
     currentLanguage.value = MySharedPref.getCurrentLocal().languageCode;
   }
 
-  // Toggle theme
-  void toggleTheme() {
-    MyTheme.changeTheme();
-    isDarkMode.value = !MySharedPref.getThemeIsLight();
+  // Change theme mode
+  Future<void> changeThemeMode(String mode) async {
+    await MyTheme.setThemeMode(mode);
+    currentThemeMode.value = mode;
+
+    // Show feedback
+    String themeName = mode == 'system' ? 'System Default' : (mode == 'light' ? 'Light Mode' : 'Dark Mode');
+    Get.snackbar(
+      'Theme Changed',
+      'Switched to $themeName',
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 2),
+    );
+  }
+
+  // Get theme mode display name
+  String getThemeModeName(String mode) {
+    switch (mode) {
+      case 'system':
+        return 'System Default';
+      case 'light':
+        return 'Light Mode';
+      case 'dark':
+        return 'Dark Mode';
+      default:
+        return 'System Default';
+    }
   }
 
   // Change language

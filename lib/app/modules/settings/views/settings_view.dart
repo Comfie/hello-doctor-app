@@ -78,14 +78,14 @@ class SettingsView extends GetView<SettingsController> {
           Obx(() => _buildSettingsTile(
                 icon: Icons.brightness_6,
                 iconColor: LightThemeColors.primaryColor,
-                title: 'Dark Mode',
-                subtitle: 'Switch between light and dark theme',
-                trailing: Switch(
-                  value: controller.isDarkMode.value,
-                  onChanged: (value) => controller.toggleTheme(),
-                  activeColor: LightThemeColors.primaryColor,
+                title: 'Theme',
+                subtitle: controller.getThemeModeName(controller.currentThemeMode.value),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 16.sp,
+                  color: LightThemeColors.iconColorLight,
                 ),
-                onTap: null,
+                onTap: () => _showThemeDialog(),
               )),
           _buildDivider(),
           Obx(() => _buildSettingsTile(
@@ -291,6 +291,138 @@ class SettingsView extends GetView<SettingsController> {
                 fontWeight: FontWeight.w500,
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showThemeDialog() {
+    Get.dialog(
+      Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(20.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Select Theme',
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.bold,
+                  color: LightThemeColors.bodyTextColor,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              Obx(() => _buildThemeOption(
+                'system',
+                'System Default',
+                'Follows device theme',
+                Icons.phone_android,
+              )),
+              SizedBox(height: 12.h),
+              Obx(() => _buildThemeOption(
+                'light',
+                'Light Mode',
+                'Always use light theme',
+                Icons.light_mode,
+              )),
+              SizedBox(height: 12.h),
+              Obx(() => _buildThemeOption(
+                'dark',
+                'Dark Mode',
+                'Always use dark theme',
+                Icons.dark_mode,
+              )),
+              SizedBox(height: 16.h),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () => Get.back(),
+                  child: Text(
+                    'Cancel',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      color: LightThemeColors.primaryColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildThemeOption(String mode, String name, String description, IconData icon) {
+    final isSelected = controller.currentThemeMode.value == mode;
+
+    return InkWell(
+      onTap: () {
+        controller.changeThemeMode(mode);
+        Get.back();
+      },
+      borderRadius: BorderRadius.circular(8.r),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? LightThemeColors.primaryColor.withOpacity(0.1)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+            color: isSelected
+                ? LightThemeColors.primaryColor
+                : LightThemeColors.dividerColor,
+            width: isSelected ? 2 : 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: isSelected
+                  ? LightThemeColors.primaryColor
+                  : LightThemeColors.iconColorLight,
+              size: 24.sp,
+            ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                      color: isSelected
+                          ? LightThemeColors.primaryColor
+                          : LightThemeColors.bodyTextColor,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: LightThemeColors.bodySmallTextColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (isSelected)
+              Icon(
+                Icons.check_circle,
+                color: LightThemeColors.primaryColor,
+                size: 22.sp,
+              ),
           ],
         ),
       ),
