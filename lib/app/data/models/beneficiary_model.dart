@@ -37,7 +37,7 @@ class Beneficiary {
 
   factory Beneficiary.fromJson(Map<String, dynamic> json) {
     return Beneficiary(
-      id: json['id'],
+      id: json['id'] is int ? json['id'] : int.parse(json['id'].toString()),
       firstName: json['firstName'] ?? '',
       lastName: json['lastName'] ?? '',
       idNumber: json['idNumber'] ?? '',
@@ -46,7 +46,7 @@ class Beneficiary {
       relationship: json['relationship'] ?? '',
       email: json['email'],
       phoneNumber: json['phoneNumber'],
-      mainMemberId: json['mainMemberId'] ?? '',
+      mainMemberId: json['mainMemberId']?.toString() ?? '',
     );
   }
 

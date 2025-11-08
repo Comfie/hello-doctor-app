@@ -25,8 +25,15 @@ class BeneficiaryService extends GetxService {
       headers: _authService.authHeaders,
       onLoading: onLoading,
       onSuccess: (response) {
-        if (response.data['isSuccess'] == true && response.data['value'] != null) {
+        // Check if response is wrapped format
+        if (response.data is Map && response.data['isSuccess'] == true && response.data['value'] != null) {
           final List<dynamic> data = response.data['value'];
+          beneficiaries = data.map((json) => Beneficiary.fromJson(json)).toList();
+          onSuccess?.call(beneficiaries);
+        }
+        // Handle direct array format (your API's actual format)
+        else if (response.data is List) {
+          final List<dynamic> data = response.data;
           beneficiaries = data.map((json) => Beneficiary.fromJson(json)).toList();
           onSuccess?.call(beneficiaries);
         }
